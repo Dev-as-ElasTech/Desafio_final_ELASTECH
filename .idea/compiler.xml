@@ -8,14 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="divasbank" />
+        <module name="Desafio_final_ELASTECH" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Desafio_final_ELASTECH" target="17" />
       <module name="divasbank" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Desafio_final_ELASTECH" options="-parameters" />
       <module name="divasbank" options="-parameters" />
     </option>
   </component>
