@@ -3,10 +3,14 @@ package br.com.divasbank.model;
 public class Transacoes {
     private Integer idTransacao;
     private Double valor;
+    private String dataTransferencia;
+
     Conta conta;
-    public Transacoes(Integer idTransacao, Double valor, Conta conta) {
+
+    public Transacoes(Integer idTransacao, Double valor, String dataTransferencia, Conta conta) {
         this.idTransacao = idTransacao;
         this.valor = valor;
+        this.dataTransferencia = dataTransferencia;
         this.conta = conta;
     }
 
@@ -49,5 +53,13 @@ public class Transacoes {
 
     public void setConta(Conta conta) {
         this.conta = conta;
+    }
+
+    public String getDataTransferencia() {
+        return dataTransferencia;
+    }
+
+    public void setDataTransferencia(String dataTransferencia) {
+        this.dataTransferencia = dataTransferencia;
     }
 }
