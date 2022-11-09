@@ -1,16 +1,41 @@
 package br.com.divasbank.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import br.com.divasbank.model.Cliente;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class ClienteController {
 
     @GetMapping("/cliente")
-    public  String hello() {
-        return "Olá cliente";
+    public List<Cliente> listarTodos() {
+
+        return null;
     }
 
+    @GetMapping("/cliente/id")
+    public Cliente listarPorId() {
 
+        return null;
+    }
+
+    @PostMapping("/cliente")
+    public Cliente cadastrar() {
+
+        return null;
+    }
+
+    @PutMapping("/cliente/id")
+    public Cliente editar(){
+
+        return null;
+    }
+
+    @PutMapping("/cliente/id")
+    public Cliente inativar(){
+
+        return null;
+    }
 
 }
