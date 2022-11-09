@@ -13,8 +13,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-actuator:2.7.5" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.7.5" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.7.5" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.5" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-logging:2.7.5" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.2.11" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.2.11" level="project" />
@@ -103,5 +101,8 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:5.3.23" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.23" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:5.3.23" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:2.7.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.7.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.5" level="project" />
   </component>
 </module>
