@@ -32,7 +32,7 @@ public class ClienteController {
         return null;
     }
 
-    @PutMapping("/cliente/id")
+    @PatchMapping("/cliente/id")
     public Cliente inativar(){
 
         return null;
