@@ -11,10 +11,11 @@ public class Cliente {
     private Integer telefone;
     private Double rendaMensal;
     private Integer agencia;
+    private Boolean ativo;
     Conta conta;
-    List<Endereco> listaEndereco;
+    List<Endereco> listaEnderecos;
 
-    public Cliente(Integer idCliente, String nome, String cpf, String email, String dataNascimento, Integer telefone, Double rendaMensal, Integer agencia, Conta conta, List<Endereco> listaEndereco) {
+    public Cliente(Integer idCliente, String nome, String cpf, String email, String dataNascimento, Integer telefone, Double rendaMensal, Integer agencia, Boolean ativo, Conta conta, List<Endereco> listaEnderecos) {
         this.idCliente = idCliente;
         this.nome = nome;
         this.cpf = cpf;
@@ -23,8 +24,9 @@ public class Cliente {
         this.telefone = telefone;
         this.rendaMensal = rendaMensal;
         this.agencia = agencia;
+        this.ativo = ativo;
         this.conta = conta;
-        this.listaEndereco = listaEndereco;
+        this.listaEnderecos = listaEnderecos;
     }
 
     public Conta getConta() {
@@ -36,12 +38,9 @@ public class Cliente {
     }
 
     public List<Endereco> getListaEndereco() {
-        return listaEndereco;
+        return listaEnderecos;
     }
 
-    public void setListaEndereco(List<Endereco> listaEndereco) {
-        this.listaEndereco = listaEndereco;
-    }
 
     public Integer getIdCliente() {
         return idCliente;
@@ -107,7 +106,22 @@ public class Cliente {
         this.agencia = agencia;
     }
 
- }
+    public List<Endereco> getListaEnderecos() {
+        return listaEnderecos;
+    }
+
+    public void setListaEnderecos(List<Endereco> listaEnderecos) {
+        this.listaEnderecos = listaEnderecos;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
+}
 
 
 
