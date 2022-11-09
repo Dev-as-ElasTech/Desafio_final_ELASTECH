@@ -1,5 +1,7 @@
 package br.com.divasbank.model;
 
+import java.util.List;
+
 public class Conta {
     private Integer idConta;
     private Integer numero;
@@ -7,15 +9,19 @@ public class Conta {
     private Double saldo;
     private Boolean verificaChequeEspecial;
     private Double chequeEspecial;
+    private Boolean ativo;
+    private List<Transacao> listaTransacoes;
 
 
-    public Conta(Integer idConta, Integer numero, Integer digito, Double saldo, Boolean verificaChequeEspecial, Double chequeEspecial) {
+    public Conta(Integer idConta, Integer numero, Integer digito, Double saldo, Boolean verificaChequeEspecial, Double chequeEspecial, Boolean ativo, List<Transacao> listaTransacoes) {
         this.idConta = idConta;
         this.numero = numero;
         this.digito = digito;
         this.saldo = saldo;
         this.verificaChequeEspecial = verificaChequeEspecial;
         this.chequeEspecial = chequeEspecial;
+        this.ativo = ativo;
+        this.listaTransacoes = listaTransacoes;
     }
 
     public Integer getIdConta() {
@@ -60,5 +66,21 @@ public class Conta {
 
     public void setChequeEspecial(Double chequeEspecial) {
         this.chequeEspecial = chequeEspecial;
+    }
+
+    public List<Transacao> getListaTransacoes() {
+        return listaTransacoes;
+    }
+
+    public void setListaTransacoes(List<Transacao> listaTransacoes) {
+        this.listaTransacoes = listaTransacoes;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
 }

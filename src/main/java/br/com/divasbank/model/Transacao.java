@@ -1,17 +1,18 @@
 package br.com.divasbank.model;
 
-public class Transacoes {
+public class Transacao {
     private Integer idTransacao;
     private Double valor;
     private String dataTransferencia;
 
-    Conta conta;
+    Conta contaOrigem, contaDestino ;
 
-    public Transacoes(Integer idTransacao, Double valor, String dataTransferencia, Conta conta) {
+    public Transacao(Integer idTransacao, Double valor, String dataTransferencia, Conta contaOrigem, Conta contaDestino) {
         this.idTransacao = idTransacao;
         this.valor = valor;
         this.dataTransferencia = dataTransferencia;
-        this.conta = conta;
+        this.contaOrigem = contaOrigem;
+        this.contaDestino = contaDestino;
     }
 
     public void saque() {
@@ -47,19 +48,27 @@ public class Transacoes {
         this.valor = valor;
     }
 
-    public Conta getConta() {
-        return conta;
-    }
-
-    public void setConta(Conta conta) {
-        this.conta = conta;
-    }
-
     public String getDataTransferencia() {
         return dataTransferencia;
     }
 
     public void setDataTransferencia(String dataTransferencia) {
         this.dataTransferencia = dataTransferencia;
+    }
+
+    public Conta getContaOrigem() {
+        return contaOrigem;
+    }
+
+    public void setContaOrigem(Conta contaOrigem) {
+        this.contaOrigem = contaOrigem;
+    }
+
+    public Conta getContaDestino() {
+        return contaDestino;
+    }
+
+    public void setContaDestino(Conta contaDestino) {
+        this.contaDestino = contaDestino;
     }
 }
