@@ -1,6 +1,5 @@
 package br.com.divasbank.controller;
 
-import br.com.divasbank.model.Cliente;
 import br.com.divasbank.model.Conta;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +12,7 @@ import java.util.List;
 public class ContaController {
 
     @GetMapping("/conta")
-    public List<Conta> listarTodos() {
+    public List<Conta> listarTodas() {
 
         return null;
     }

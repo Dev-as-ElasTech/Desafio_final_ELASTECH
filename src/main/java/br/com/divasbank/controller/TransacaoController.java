@@ -1,10 +1,8 @@
 package br.com.divasbank.controller;
 
-import br.com.divasbank.model.Conta;
 import br.com.divasbank.model.Transacao;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;

@@ -1,6 +1,5 @@
 package br.com.divasbank.controller;
 
-import br.com.divasbank.model.Cliente;
 import br.com.divasbank.model.Endereco;
 import org.springframework.web.bind.annotation.*;
 
