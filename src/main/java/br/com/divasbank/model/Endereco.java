@@ -1,5 +1,8 @@
 package br.com.divasbank.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Endereco {
     private Integer idEndereco;
     private String rua;
@@ -9,6 +12,9 @@ public class Endereco {
     private String estado;
     private String cep;
     private String pais;
+
+    public Endereco() {
+    }
 
     public Endereco(Integer idEndereco, String rua, String numero, String bairro, String cidade, String estado, String cep, String pais, Integer idCliente) {
         this.idEndereco = idEndereco;

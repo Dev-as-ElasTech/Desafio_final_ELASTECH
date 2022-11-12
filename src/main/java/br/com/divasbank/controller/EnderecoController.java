@@ -6,41 +6,42 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("endereco")
 public class EnderecoController {
 
-    @GetMapping("/endereco")
-    public List<Endereco> listarTodos() {
+    @GetMapping
+    public String listarTodos() {
 
-        return null;
+        return "Listar todos os endereços";
     }
 
-    @GetMapping("/endereco/id")
-    public Endereco listarEnderecoPorId() {
+    @GetMapping("/{id}")
+    public String listarEnderecoPorId(@PathVariable Long id) {
 
-        return null;
+        return "Listar Endereço por Id";
     }
 
-    @GetMapping("/endereco/idCliente")
-    public Endereco listarEnderecoPorCliente() {
+    @GetMapping("/{idClinte}")
+    public String listarEnderecoPorCliente(@PathVariable Long idCliente) {
 
-        return null;
+        return "Listar Endereços por Cliente";
     }
 
-    @PostMapping("/endereco")
-    public Endereco cadastrar() {
+    @PostMapping
+    public String cadastrar(@RequestBody Endereco endereco) {
 
-        return null;
+        return "Cadastrar Endereço";
     }
 
-    @PutMapping("/endereco/id")
-    public Endereco editar(){
+    @PutMapping("/{id}")
+    public String editar(@PathVariable Long id, @RequestBody Endereco endereco) {
 
-        return null;
+        return "Editar Endereço";
     }
 
-    @DeleteMapping("/endereco/id")
-    public Endereco deletar(){
-
-        return null;
+    @DeleteMapping("/{id}")
+    public String deletar(@PathVariable Long id){
+        System.out.println(id);
+        return "Deletar Endereço";
     }
 }

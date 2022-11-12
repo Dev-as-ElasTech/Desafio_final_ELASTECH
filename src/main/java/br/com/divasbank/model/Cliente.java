@@ -1,9 +1,10 @@
 package br.com.divasbank.model;
 
+import javax.persistence.Embedded;
 import java.util.List;
 
 public class Cliente {
-    private Integer idCliente;
+    private Long id;
     private String nome;
     private String cpf;
     private String email;
@@ -13,10 +14,15 @@ public class Cliente {
     private Integer agencia;
     private Boolean ativo;
     Conta conta;
+
+    @Embedded
     List<Endereco> listaEnderecos;
 
-    public Cliente(Integer idCliente, String nome, String cpf, String email, String dataNascimento, Integer telefone, Double rendaMensal, Integer agencia, Boolean ativo, Conta conta, List<Endereco> listaEnderecos) {
-        this.idCliente = idCliente;
+    public Cliente() {
+    }
+
+    public Cliente(Long id, String nome, String cpf, String email, String dataNascimento, Integer telefone, Double rendaMensal, Integer agencia, Boolean ativo, Conta conta, List<Endereco> listaEnderecos) {
+        this.id= id;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -42,12 +48,12 @@ public class Cliente {
     }
 
 
-    public Integer getIdCliente() {
-        return idCliente;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
