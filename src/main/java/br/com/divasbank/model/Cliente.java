@@ -1,9 +1,16 @@
 package br.com.divasbank.model;
 
 import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.List;
 
+@Entity
 public class Cliente {
+
+    @Id
+    @GeneratedValue
     private Long id;
     private String nome;
     private String cpf;
@@ -13,9 +20,10 @@ public class Cliente {
     private Double rendaMensal;
     private Integer agencia;
     private Boolean ativo;
+   @Embedded
     Conta conta;
 
-    @Embedded
+
     List<Endereco> listaEnderecos;
 
     public Cliente() {

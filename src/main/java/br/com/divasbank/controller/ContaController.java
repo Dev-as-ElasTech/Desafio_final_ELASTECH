@@ -1,6 +1,8 @@
 package br.com.divasbank.controller;
 
 import br.com.divasbank.model.Conta;
+import br.com.divasbank.service.ContaService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,6 +10,9 @@ import java.util.List;
 @RestController
 @RequestMapping("conta")
 public class ContaController {
+
+    @Autowired
+    ContaService contaService;
 
     @GetMapping
     public String listarTodas() {

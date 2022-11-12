@@ -1,6 +1,8 @@
 package br.com.divasbank.controller;
 
 import br.com.divasbank.model.Cliente;
+import br.com.divasbank.service.ClienteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,6 +10,9 @@ import java.util.List;
 @RestController
 @RequestMapping("cliente")
 public class ClienteController {
+
+    @Autowired
+    ClienteService clienteService;
 
     @GetMapping
     public String listarTodos() {

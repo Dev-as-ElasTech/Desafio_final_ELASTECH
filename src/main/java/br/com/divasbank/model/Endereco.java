@@ -1,10 +1,16 @@
 package br.com.divasbank.model;
 
-import javax.persistence.Embeddable;
 
-@Embeddable
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Endereco {
-    private Integer idEndereco;
+
+    @Id
+    @GeneratedValue
+    private Long id;
     private String rua;
     private String numero;
     private String bairro;
@@ -16,8 +22,8 @@ public class Endereco {
     public Endereco() {
     }
 
-    public Endereco(Integer idEndereco, String rua, String numero, String bairro, String cidade, String estado, String cep, String pais, Integer idCliente) {
-        this.idEndereco = idEndereco;
+    public Endereco(Long id, String rua, String numero, String bairro, String cidade, String estado, String cep, String pais, Integer idCliente) {
+        this.id = id;
         this.rua = rua;
         this.numero = numero;
         this.bairro = bairro;
@@ -27,12 +33,12 @@ public class Endereco {
         this.pais = pais;
     }
 
-    public Integer getIdEndereco() {
-        return idEndereco;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdEndereco(Integer idEndereco) {
-        this.idEndereco = idEndereco;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getRua() {

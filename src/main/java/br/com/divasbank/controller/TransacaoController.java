@@ -2,6 +2,9 @@ package br.com.divasbank.controller;
 
 
 import br.com.divasbank.model.Transacao;
+import br.com.divasbank.service.TransacaoService;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,6 +12,9 @@ import java.util.List;
 @RestController
 @RequestMapping("transferencia")
 public class TransacaoController {
+
+    @Autowired
+    TransacaoService transacaoService;
 
     @GetMapping
     public String listarTodas() {

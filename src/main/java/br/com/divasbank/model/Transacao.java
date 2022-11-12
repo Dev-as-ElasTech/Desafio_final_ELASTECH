@@ -1,11 +1,23 @@
 package br.com.divasbank.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Transacao {
+
+    @Id
+    @GeneratedValue
     private Long id;
     private Double valor;
     private String dataTransferencia;
 
+    //colocamos as duas annotations abaixo conforme orientação do IntelliJ, para resolver erro e dar push
+    @Embedded
+    @ManyToOne
     Conta contaOrigem, contaDestino ;
+
+    public Transacao() {
+    }
 
     public Transacao(Long id, Double valor, String dataTransferencia, Conta contaOrigem, Conta contaDestino) {
         this.id = id;

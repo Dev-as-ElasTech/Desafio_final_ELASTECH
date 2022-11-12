@@ -1,8 +1,17 @@
 package br.com.divasbank.model;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.List;
 
+@Entity
+@Embeddable
 public class Conta {
+
+    @Id
+    @GeneratedValue
     private Long id;
     private Integer numero;
     private Integer digito;
@@ -10,8 +19,12 @@ public class Conta {
     private Boolean verificaChequeEspecial;
     private Double chequeEspecial;
     private Boolean ativo;
+
     private List<Transacao> listaTransacoes;
 
+
+    public Conta() {
+    }
 
     public Conta(Long id, Integer numero, Integer digito, Double saldo, Boolean verificaChequeEspecial, Double chequeEspecial, Boolean ativo, List<Transacao> listaTransacoes) {
         this.id = id;

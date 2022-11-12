@@ -8,6 +8,5 @@ public class DivasbankApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DivasbankApplication.class, args);
-		System.out.println("Teste");
 	}
 }
