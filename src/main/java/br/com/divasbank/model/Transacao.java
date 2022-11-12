@@ -9,20 +9,23 @@ public class Transacao {
     @GeneratedValue
     private Long id;
     private Double valor;
-    private String dataTransferencia;
+    private String dataTransacao;
 
-    //colocamos as duas annotations abaixo conforme orientação do IntelliJ, para resolver erro e dar push
-    @Embedded
-    @ManyToOne
-    Conta contaOrigem, contaDestino ;
+    private String tipoTransacao;
+
+    @OneToOne
+    Conta contaOrigem;
+    @OneToOne
+    Conta contaDestino;
 
     public Transacao() {
     }
 
-    public Transacao(Long id, Double valor, String dataTransferencia, Conta contaOrigem, Conta contaDestino) {
+    public Transacao(Long id, Double valor, String dataTransacao, String tipoTransacao, Conta contaOrigem, Conta contaDestino) {
         this.id = id;
         this.valor = valor;
-        this.dataTransferencia = dataTransferencia;
+        this.dataTransacao = dataTransacao;
+        this.tipoTransacao = tipoTransacao;
         this.contaOrigem = contaOrigem;
         this.contaDestino = contaDestino;
     }
@@ -60,12 +63,12 @@ public class Transacao {
         this.valor = valor;
     }
 
-    public String getDataTransferencia() {
-        return dataTransferencia;
+    public String getDataTransacao() {
+        return dataTransacao;
     }
 
-    public void setDataTransferencia(String dataTransferencia) {
-        this.dataTransferencia = dataTransferencia;
+    public void setDataTransacao(String dataTransacao) {
+        this.dataTransacao = dataTransacao;
     }
 
     public Conta getContaOrigem() {
@@ -82,5 +85,13 @@ public class Transacao {
 
     public void setContaDestino(Conta contaDestino) {
         this.contaDestino = contaDestino;
+    }
+
+    public String getTipoTransacao() {
+        return tipoTransacao;
+    }
+
+    public void setTipoTransacao(String tipoTransacao) {
+        this.tipoTransacao = tipoTransacao;
     }
 }
