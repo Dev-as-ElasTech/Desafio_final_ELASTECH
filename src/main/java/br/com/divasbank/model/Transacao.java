@@ -1,14 +1,14 @@
 package br.com.divasbank.model;
 
 public class Transacao {
-    private Integer idTransacao;
+    private Long id;
     private Double valor;
     private String dataTransferencia;
 
     Conta contaOrigem, contaDestino ;
 
-    public Transacao(Integer idTransacao, Double valor, String dataTransferencia, Conta contaOrigem, Conta contaDestino) {
-        this.idTransacao = idTransacao;
+    public Transacao(Long id, Double valor, String dataTransferencia, Conta contaOrigem, Conta contaDestino) {
+        this.id = id;
         this.valor = valor;
         this.dataTransferencia = dataTransferencia;
         this.contaOrigem = contaOrigem;
@@ -28,14 +28,14 @@ public class Transacao {
     }
 
 
-    public Integer getIdTransacao() {
+    public Long getIdTransacao() {
 
-        return idTransacao;
+        return id;
     }
 
-    public void setIdTransacao(Integer idTransacao) {
+    public void setIdTransacao(Long id) {
 
-        this.idTransacao = idTransacao;
+        this.id = id;
     }
 
     public Double getValor() {

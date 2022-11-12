@@ -6,36 +6,43 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("cliente")
 public class ClienteController {
 
-    @GetMapping("/cliente")
-    public List<Cliente> listarTodos() {
+    @GetMapping
+    public String listarTodos() {
 
-        return null;
+        return "Listando todos os clientes";
     }
 
-    @GetMapping("/cliente/id")
-    public Cliente listarPorId() {
-
-        return null;
+    @GetMapping("/{id}")
+    public String listarPorId(@PathVariable Long id) {
+        Cliente cliente = new Cliente();
+        cliente.setId(100L);
+        cliente.setNome("Maria");
+        cliente.setCpf("000.000.000-00");
+        cliente.setEmail("maria@email");
+        cliente.setDataNascimento("01/01/1986");
+        System.out.println(cliente.getNome());
+        return "Listando clientes por id";
     }
 
-    @PostMapping("/cliente")
-    public Cliente cadastrar() {
-
-        return null;
+    @PostMapping
+    public String cadastrar(@RequestBody Cliente cliente) {
+        System.out.println(cliente.getNome());
+        return "Cliente cadastrado";
     }
 
-    @PutMapping("/cliente/id")
-    public Cliente editar(){
-
-        return null;
+    @PutMapping("/{id}")
+    public String editar(@PathVariable Long id, @RequestBody Cliente cliente){
+        System.out.println(cliente.getNome());
+        return "Editar Cliente";
     }
 
-    @PatchMapping("/cliente/id")
-    public Cliente inativar(){
+    @PatchMapping("/{id}")
+    public String inativar(@PathVariable Long id, @RequestBody Cliente cliente){
 
-        return null;
+        return "inativar cliente";
     }
 
 }

@@ -1,38 +1,36 @@
 package br.com.divasbank.controller;
 
-import br.com.divasbank.model.Conta;
+
 import br.com.divasbank.model.Transacao;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("transferencia")
 public class TransacaoController {
 
-    @GetMapping("/tranferencia")
-    public List<Transacao> listarTodas() {
+    @GetMapping
+    public String listarTodas() {
 
-        return null;
+        return "Todas as transações";
     }
 
-    @GetMapping("/tranferencia/id")
-    public Transacao listarPorId() {
+    @GetMapping("/{id}")
+    public String listarPorId(@PathVariable Long id) {
 
-        return null;
+        return "Listado por Id";
     }
-    @GetMapping("/tranferencia/idCliente")
-    public List<Transacao> listarPorCliente() {
+    @GetMapping("/{idCliente}")
+    public String listarPorCliente(@PathVariable Long idCliente) {
 
-        return null;
+        return "Listado por cliente";
     }
 
-    @PostMapping("/tranferencia")
-    public Transacao cadastrar() {
-
-        return null;
+    @PostMapping
+    public String cadastrar(@RequestBody Transacao transacao) {
+        System.out.println(transacao.getValor());
+        return "Transação Realizada!";
     }
 
 }

@@ -1,38 +1,35 @@
 package br.com.divasbank.controller;
 
-import br.com.divasbank.model.Cliente;
 import br.com.divasbank.model.Conta;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("conta")
 public class ContaController {
 
-    @GetMapping("/conta")
-    public List<Conta> listarTodos() {
+    @GetMapping
+    public String listarTodas() {
 
-        return null;
+        return "Listar Todas as Contas";
     }
 
-    @GetMapping("/conta/id")
-    public Conta listarPorId() {
+    @GetMapping("/{id}")
+    public String listarPorId(@PathVariable Long id) {
 
-        return null;
+        return "Listar contas por Id";
     }
 
-    @PostMapping("/conta")
-    public Conta cadastrar() {
+    @PostMapping
+    public String cadastrar(@RequestBody Conta conta) {
 
-        return null;
+        return "Cadastro de Conta";
     }
 
-    @PutMapping("/conta/id")
-    public Conta inativar(){
+    @PutMapping("/{id}")
+    public String inativar(@PathVariable Long id, @RequestBody Conta conta) {
 
-        return null;
+        return "Inativar Conta";
     }
 }

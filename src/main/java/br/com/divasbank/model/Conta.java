@@ -3,7 +3,7 @@ package br.com.divasbank.model;
 import java.util.List;
 
 public class Conta {
-    private Integer idConta;
+    private Long id;
     private Integer numero;
     private Integer digito;
     private Double saldo;
@@ -13,8 +13,8 @@ public class Conta {
     private List<Transacao> listaTransacoes;
 
 
-    public Conta(Integer idConta, Integer numero, Integer digito, Double saldo, Boolean verificaChequeEspecial, Double chequeEspecial, Boolean ativo, List<Transacao> listaTransacoes) {
-        this.idConta = idConta;
+    public Conta(Long id, Integer numero, Integer digito, Double saldo, Boolean verificaChequeEspecial, Double chequeEspecial, Boolean ativo, List<Transacao> listaTransacoes) {
+        this.id = id;
         this.numero = numero;
         this.digito = digito;
         this.saldo = saldo;
@@ -24,8 +24,8 @@ public class Conta {
         this.listaTransacoes = listaTransacoes;
     }
 
-    public Integer getIdConta() {
-        return idConta;
+    public Long getIdConta() {
+        return id;
     }
 
     public Integer getNumero() {
