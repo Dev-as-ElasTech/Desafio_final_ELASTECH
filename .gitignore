@@ -374,3 +374,6 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,maven,windows,intellij
 .idea/compiler.xml
+
+### Sensitive Data ###
+src/main/resources/application.properties
