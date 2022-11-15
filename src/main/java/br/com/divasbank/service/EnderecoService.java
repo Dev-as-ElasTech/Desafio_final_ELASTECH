@@ -1,36 +1,44 @@
 package br.com.divasbank.service;
 
+
+import br.com.divasbank.model.Endereco;
 import br.com.divasbank.repository.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Optional;
 
 @Component
 public class EnderecoService {
 
     @Autowired
-    EnderecoRepository enderecoRepository;
+    private EnderecoRepository enderecoRepository;
 
-    public void listarTodos() {
-
+    public List<Endereco> listarTodos() {
+        return enderecoRepository.findAll();
     }
 
-    public void listarEnderecoPorId() {
-
+    public Optional<Endereco> listarEnderecoPorId(Long id) {
+        return enderecoRepository.findById(id);
     }
 
-    public void listarEnderecoPorCliente() {
+    //Falta implementar corretamente
+    /*public Optional<Endereco>  listarEnderecoPorCliente(Long id) {
 
+        return enderecoRepository.findById(id);
+    } */
+
+    public Endereco cadastrar(Endereco endereco) {
+        return enderecoRepository.save(endereco);
     }
 
-    public void cadastrar() {
-
+    public Endereco editar(Endereco endereco) {
+        listarEnderecoPorId(endereco.getId());
+        return enderecoRepository.save(endereco);
     }
 
-    public void editar() {
-
-    }
-
-    public void deletar() {
-
+    public void deletar(Long id) {
+        enderecoRepository.deleteById(id);
     }
 }
