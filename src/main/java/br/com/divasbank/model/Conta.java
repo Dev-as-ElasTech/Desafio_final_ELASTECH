@@ -1,7 +1,10 @@
 package br.com.divasbank.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Conta {
@@ -16,7 +19,8 @@ public class Conta {
     private Double chequeEspecial;
     private Boolean ativo;
 
-    @OneToMany
+    @OneToMany (mappedBy="conta")
+    @JsonIgnore
     private List<Transacao> listaTransacoes;
 
     public Conta() {
@@ -94,5 +98,18 @@ public class Conta {
 
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Conta conta = (Conta) o;
+        return Objects.equals(id, conta.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

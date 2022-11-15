@@ -4,6 +4,7 @@ package br.com.divasbank.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class Endereco {
@@ -18,6 +19,8 @@ public class Endereco {
     private String estado;
     private String cep;
     private String pais;
+
+
 
     public Endereco() {
     }
@@ -97,4 +100,16 @@ public class Endereco {
         this.pais = pais;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Endereco endereco = (Endereco) o;
+        return Objects.equals(id, endereco.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

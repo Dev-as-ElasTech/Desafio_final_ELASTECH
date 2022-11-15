@@ -1,6 +1,7 @@
 package br.com.divasbank.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 public class Transacao {
@@ -18,6 +19,9 @@ public class Transacao {
     @OneToOne
     Conta contaDestino;
 
+    @ManyToOne
+    Conta conta;
+
     public Transacao() {
     }
 
@@ -30,18 +34,13 @@ public class Transacao {
         this.contaDestino = contaDestino;
     }
 
-    public void saque() {
-        System.out.println("Saque realizado com Sucesso");
+    public Conta getConta() {
+        return conta;
     }
 
-    public void deposito() {
-        System.out.println("Deposito realizado com Sucesso");
+    public void setConta(Conta conta) {
+        this.conta = conta;
     }
-
-    public void transferencia() {
-        System.out.println("Transferencia realizada com Sucesso");
-    }
-
 
     public Long getIdTransacao() {
 
@@ -93,5 +92,18 @@ public class Transacao {
 
     public void setTipoTransacao(String tipoTransacao) {
         this.tipoTransacao = tipoTransacao;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transacao transacao = (Transacao) o;
+        return Objects.equals(id, transacao.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

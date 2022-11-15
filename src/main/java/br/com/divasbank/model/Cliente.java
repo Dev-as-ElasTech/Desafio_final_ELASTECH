@@ -1,7 +1,10 @@
 package br.com.divasbank.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Cliente {
@@ -21,6 +24,7 @@ public class Cliente {
     @OneToOne
     Conta conta;
 
+    @JsonIgnore
     @OneToMany
     List<Endereco> listaEnderecos;
 
@@ -132,6 +136,19 @@ public class Cliente {
 
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cliente cliente = (Cliente) o;
+        return Objects.equals(id, cliente.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
 
