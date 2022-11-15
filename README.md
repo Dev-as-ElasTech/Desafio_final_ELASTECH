@@ -29,7 +29,23 @@
 </tr>
 <tr>
 	<td>Spring-boot-starter-web</td>
-	<td>2.7.4</td>
+	<td>2.7.5</td>
+</tr>
+<tr>
+	<td>Spring-boot-devtools</td>
+	<td>2.7.5</td>
+</tr>
+<tr>
+	<td>Spring-boot-starter-data-jpa</td>
+	<td>2.7.5</td>
+</tr>
+<tr>
+	<td>Spring-boot-starter-test</td>
+	<td>2.7.5</td>
+</tr>
+<tr>
+	<td>Spring-boot-starter-actuator</td>
+	<td><a href="https://localhost:8080/actuator/">https://localhost:8080/actuator/</a></td>
 </tr>
 <tr>
 	<td>Jpa</td>
@@ -37,27 +53,19 @@
 </tr>
 <tr>
 	<td>Lombok</td>
-	<td>version</td>
-</tr>
-<tr>
-	<td>Spring web</td>
-	<td>version</td>
-</tr>
-<tr>
-	<td>Spring-boot-actuator</td>
-	<td><a href="https://localhost:8080/actuator/">https://localhost:8080/actuator/</a></td>
+	<td>1.18.24</td>
 </tr>
 <tr>
 	<td>Maven</td>
-	<td>version</td>
+	<td>4</td>
 </tr>
 <tr>
    <td>Postman</td>
-	<td>version</td>
+	<td>5.5.6</td>
 </tr>
 <tr>
 	<td>Mysql</td>
-	<td>version</td>
+	<td>8.0.31</td>
 </tr>
 </table>
 
