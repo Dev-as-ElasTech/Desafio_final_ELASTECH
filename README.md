@@ -75,16 +75,7 @@
 
 <div>
 
-[![Linkedin Badge](https://img.shields.io/badge/-Bruna-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/bruna-hirano/)](https://www.linkedin.com/in/bruna-hirano/)
-
-[![Linkedin Badge](https://img.shields.io/badge/-Luiza-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/luizatrocino/)](https://www.linkedin.com/in/luizatrocino/) 
-
-[![Linkedin Badge](https://img.shields.io/badge/-Paula-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/paula-cristiane-belmiro-26386859/)](https://www.linkedin.com/in/paula-cristiane-belmiro-26386859/)
-
-[![Linkedin Badge](https://img.shields.io/badge/-Rosana-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rosana-oliveira-47a686244/)](https://www.linkedin.com/in/rosana-oliveira-47a686244/)
-
-[![Linkedin Badge](https://img.shields.io/badge/-Kalliandra-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/kalliandra-carla-de-lima-b68678127/)](https://www.linkedin.com/in/kalliandra-carla-de-lima-b68678127/)
-
-[![Linkedin Badge](https://img.shields.io/badge/-Yasmin-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/yasmin-porto-costa/)](https://www.linkedin.com/in/yasmin-porto-costa/) 
+[![Linkedin Badge](https://img.shields.io/badge/-Bruna-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/bruna-hirano/)](https://www.linkedin.com/in/bruna-hirano/) [![Linkedin Badge](https://img.shields.io/badge/-Luiza-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/luizatrocino/)](https://www.linkedin.com/in/luizatrocino/) [![Linkedin Badge](https://img.shields.io/badge/-Paula-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/paula-cristiane-belmiro-26386859/)](https://www.linkedin.com/in/paula-cristiane-belmiro-26386859/) [![Linkedin Badge](https://img.shields.io/badge/-Rosana-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rosana-oliveira-47a686244/)](https://www.linkedin.com/in/rosana-oliveira-47a686244/)
+[![Linkedin Badge](https://img.shields.io/badge/-Kalliandra-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/kalliandra-carla-de-lima-b68678127/)](https://www.linkedin.com/in/kalliandra-carla-de-lima-b68678127/) [![Linkedin Badge](https://img.shields.io/badge/-Yasmin-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/yasmin-porto-costa/)](https://www.linkedin.com/in/yasmin-porto-costa/) 
 
 </div>
