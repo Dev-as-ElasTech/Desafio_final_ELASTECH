@@ -1,12 +1,14 @@
 # Desafio_final_ELASTECH
 
-<h1>Banco API</h1>
-<p>Banco Divas Bank API para Projeto Final #ElasTech @PagBank/PagSeguro </p>
+<h1>Banco API  - Java</h1>  
 
-<h3>Status do Projeto</h3>
+Banco `Divas Bank` API para Projeto Final `#ElasTech` `@PagBank/PagSeguro`. 
+
+Implementação de CRUD  utilizando banco de dados `MySQL` e linguagem `Java` e demais ferramentas citadas logo abaixo.
+
+<h2>Status do Projeto</h2>
+
 <p align="center"> Banco API 💻 Em construção... </p>
-
-## Requisitos
 
 <h3>Features</h3>
 
@@ -15,7 +17,15 @@
 - [x] Transferências de saldo entre as contas<br>
 - [x] Buscar o histórico de transações entre as contas<br>
 
-##Foto do teste
+## Requisitos
+* Ter instalado na sua máquina:mysql, um editor de texto (recomendamos o Intellij) e Java.
+* Como rodar a aplicação: Clone este repositório
+* Acesse a pasta do projeto no terminal/cmd e vá para a pasta do Divas Bank,
+* Execute a aplicação o servidor entra pela porta 8080.
+
+
+
+##Foto do teste / Endpoint/ Rotas
   <img src="https://i.imgur.com/UBHcWKt.png" alt="Sacola API Swagger UI">
 
 <h3>## Ferramentas e Tecnologias </h3>
