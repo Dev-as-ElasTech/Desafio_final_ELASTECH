@@ -15,9 +15,8 @@ public class ContaController {
     ContaService contaService;
 
     @GetMapping
-    public String listarTodas() {
-
-        return "Listar Todas as Contas";
+    public List<Conta> listarTodas() {
+        return contaService.listarTodos();
     }
 
     @GetMapping("/{id}")

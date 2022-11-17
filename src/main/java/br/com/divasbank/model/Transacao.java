@@ -14,23 +14,20 @@ public class Transacao {
 
     private String tipoTransacao;
 
-    @OneToOne
-    Conta contaOrigem;
-    @OneToOne
-    Conta contaDestino;
-
     @ManyToOne
     Conta conta;
+
+    private Long contaDestino;
 
     public Transacao() {
     }
 
-    public Transacao(Long id, Double valor, String dataTransacao, String tipoTransacao, Conta contaOrigem, Conta contaDestino) {
+    public Transacao(Long id, Double valor, String dataTransacao, String tipoTransacao, Conta conta, Long contaDestino) {
         this.id = id;
         this.valor = valor;
         this.dataTransacao = dataTransacao;
         this.tipoTransacao = tipoTransacao;
-        this.contaOrigem = contaOrigem;
+        this.conta = conta;
         this.contaDestino = contaDestino;
     }
 
@@ -70,19 +67,11 @@ public class Transacao {
         this.dataTransacao = dataTransacao;
     }
 
-    public Conta getContaOrigem() {
-        return contaOrigem;
-    }
-
-    public void setContaOrigem(Conta contaOrigem) {
-        this.contaOrigem = contaOrigem;
-    }
-
-    public Conta getContaDestino() {
+    public Long getContaDestino() {
         return contaDestino;
     }
 
-    public void setContaDestino(Conta contaDestino) {
+    public void setContaDestino(Long contaDestino) {
         this.contaDestino = contaDestino;
     }
 

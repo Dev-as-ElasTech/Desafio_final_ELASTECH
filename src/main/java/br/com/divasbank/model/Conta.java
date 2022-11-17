@@ -19,7 +19,7 @@ public class Conta {
     private Double chequeEspecial;
     private Boolean ativo;
 
-    @OneToMany (mappedBy="conta")
+    @OneToMany(mappedBy="conta")
     @JsonIgnore
     private List<Transacao> listaTransacoes;
 

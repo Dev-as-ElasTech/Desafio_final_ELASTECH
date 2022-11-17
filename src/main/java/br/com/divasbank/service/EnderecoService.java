@@ -24,7 +24,7 @@ public class EnderecoService {
     }
 
     //Falta implementar corretamente
-    /*public Optional<Endereco>  listarEnderecoPorCliente(Long id) {
+    /*public Optional<Endereco> listarEnderecoPorCliente(Long id) {
 
         return enderecoRepository.findById(id);
     } */

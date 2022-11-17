@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Cliente {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
     private String cpf;
@@ -25,7 +25,7 @@ public class Cliente {
     Conta conta;
 
     @JsonIgnore
-    @OneToMany
+    @OneToMany(mappedBy="cliente")
     List<Endereco> listaEnderecos;
 
     public Cliente() {

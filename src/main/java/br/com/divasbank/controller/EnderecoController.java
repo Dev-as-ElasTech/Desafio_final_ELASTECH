@@ -1,6 +1,7 @@
 package br.com.divasbank.controller;
 
 import br.com.divasbank.model.Endereco;
+import br.com.divasbank.repository.EnderecoRepository;
 import br.com.divasbank.service.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,9 +16,8 @@ public class EnderecoController {
     EnderecoService enderecoService;
 
     @GetMapping
-    public String listarTodos() {
-
-        return "Listar todos os endereços";
+    public List<Endereco> listarTodos() {
+        return enderecoService.listarTodos();
     }
 
     @GetMapping("/{id}")
