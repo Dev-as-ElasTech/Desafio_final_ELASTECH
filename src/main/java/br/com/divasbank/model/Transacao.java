@@ -13,30 +13,24 @@ public class Transacao {
     private String dataTransacao;
 
     private String tipoTransacao;
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "id")
+    Conta contaOrigem;
 
     @ManyToOne
-    Conta conta;
-
-    private Long contaDestino;
+    @JoinColumn(referencedColumnName = "id")
+    Conta contaDestino;
 
     public Transacao() {
     }
 
-    public Transacao(Long id, Double valor, String dataTransacao, String tipoTransacao, Conta conta, Long contaDestino) {
+    public Transacao(Long id, Double valor, String dataTransacao, String tipoTransacao, Conta contaOrigem, Conta contaDestino) {
         this.id = id;
         this.valor = valor;
         this.dataTransacao = dataTransacao;
         this.tipoTransacao = tipoTransacao;
-        this.conta = conta;
+        this.contaOrigem = contaOrigem;
         this.contaDestino = contaDestino;
-    }
-
-    public Conta getConta() {
-        return conta;
-    }
-
-    public void setConta(Conta conta) {
-        this.conta = conta;
     }
 
     public Long getIdTransacao() {
@@ -67,20 +61,28 @@ public class Transacao {
         this.dataTransacao = dataTransacao;
     }
 
-    public Long getContaDestino() {
-        return contaDestino;
-    }
-
-    public void setContaDestino(Long contaDestino) {
-        this.contaDestino = contaDestino;
-    }
-
     public String getTipoTransacao() {
         return tipoTransacao;
     }
 
     public void setTipoTransacao(String tipoTransacao) {
         this.tipoTransacao = tipoTransacao;
+    }
+
+    public Conta getContaOrigem() {
+        return contaOrigem;
+    }
+
+    public void setContaOrigem(Conta contaOrigem) {
+        this.contaOrigem = contaOrigem;
+    }
+
+    public Conta getContaDestino() {
+        return contaDestino;
+    }
+
+    public void setContaDestino(Conta contaDestino) {
+        this.contaDestino = contaDestino;
     }
 
     @Override

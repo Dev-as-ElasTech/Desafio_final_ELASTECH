@@ -19,14 +19,19 @@ public class Conta {
     private Double chequeEspecial;
     private Boolean ativo;
 
-    @OneToMany(mappedBy="conta")
+
+    @OneToMany(mappedBy="contaOrigem")
     @JsonIgnore
-    private List<Transacao> listaTransacoes;
+    private List<Transacao> listaTransacoesOrigem;
+
+    @OneToMany(mappedBy="contaDestino")
+    @JsonIgnore
+    private List<Transacao> listaTransacoesDestino;
 
     public Conta() {
     }
 
-    public Conta(Long id, Integer numero, Integer digito, Double saldo, Boolean verificaChequeEspecial, Double chequeEspecial, Boolean ativo, List<Transacao> listaTransacoes) {
+    public Conta(Long id, Integer numero, Integer digito, Double saldo, Boolean verificaChequeEspecial, Double chequeEspecial, Boolean ativo, List<Transacao> listaTransacoesOrigem, List<Transacao> listaTransacoesDestino) {
         this.id = id;
         this.numero = numero;
         this.digito = digito;
@@ -34,8 +39,10 @@ public class Conta {
         this.verificaChequeEspecial = verificaChequeEspecial;
         this.chequeEspecial = chequeEspecial;
         this.ativo = ativo;
-        this.listaTransacoes = listaTransacoes;
+        this.listaTransacoesOrigem = listaTransacoesOrigem;
+        this.listaTransacoesDestino = listaTransacoesDestino;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -84,12 +91,20 @@ public class Conta {
         this.chequeEspecial = chequeEspecial;
     }
 
-    public List<Transacao> getListaTransacoes() {
-        return listaTransacoes;
+    public List<Transacao> getListaTransacoesOrigem() {
+        return listaTransacoesOrigem;
     }
 
-    public void setListaTransacoes(List<Transacao> listaTransacoes) {
-        this.listaTransacoes = listaTransacoes;
+    public void setListaTransacoesOrigem(List<Transacao> listaTransacoesOrigem) {
+        this.listaTransacoesOrigem = listaTransacoesOrigem;
+    }
+
+    public List<Transacao> getListaTransacoesDestino() {
+        return listaTransacoesDestino;
+    }
+
+    public void setListaTransacoesDestino(List<Transacao> listaTransacoesDestino) {
+        this.listaTransacoesDestino = listaTransacoesDestino;
     }
 
     public Boolean getAtivo() {
