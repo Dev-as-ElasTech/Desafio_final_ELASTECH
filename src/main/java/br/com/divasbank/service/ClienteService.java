@@ -1,7 +1,11 @@
 package br.com.divasbank.service;
 
 import br.com.divasbank.model.Cliente;
+import br.com.divasbank.model.Conta;
+import br.com.divasbank.model.Endereco;
 import br.com.divasbank.repository.ClienteRepository;
+import br.com.divasbank.repository.ContaRepository;
+import br.com.divasbank.repository.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +18,13 @@ public class ClienteService {
     @Autowired
     ClienteRepository clienteRepository;
 
+    @Autowired
+    ContaRepository contaRepository;
+
+    @Autowired
+    private EnderecoRepository enderecoRepository;
+
+
     public List<Cliente> listarTodos() {
         return clienteRepository.findAll();
     }
@@ -22,19 +33,22 @@ public class ClienteService {
         return clienteRepository.findById(id);
     }
 
-    public Cliente cadastrar(Cliente cliente) {
-        return clienteRepository.save(cliente);
+    public void cadastrar(Cliente cliente) {
+        Conta contaNova = contaRepository.save(cliente.getConta());
+        cliente.setConta(contaNova);
+        clienteRepository.save(cliente);
     }
 
-    public Cliente editar(Cliente cliente) {
-        listarClientePorId(cliente.getId());
-        return clienteRepository.save(cliente);
+    public void editar(Long id, Cliente cliente) {
+        Optional<Cliente> clienteBd = clienteRepository.findById(id);
+        if (clienteBd.isPresent()) {
+            clienteRepository.save(cliente);
+        }
+    }
+    public void inativar(Long id, Cliente cliente) {
+            cliente.setAtivo(false);
+            clienteRepository.save(cliente);
+        }
     }
 
-    public Cliente inativar(Cliente cliente) {
-        listarClientePorId(cliente.getId());
-        cliente.setAtivo(false);
-        return clienteRepository.save(cliente);
-    }
 
-}

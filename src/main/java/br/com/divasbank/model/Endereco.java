@@ -8,7 +8,7 @@ import java.util.Objects;
 public class Endereco {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String rua;
     private String numero;

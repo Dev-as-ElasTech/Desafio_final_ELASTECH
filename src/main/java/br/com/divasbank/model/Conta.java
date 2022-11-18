@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Conta {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Integer numero;
     private Integer digito;

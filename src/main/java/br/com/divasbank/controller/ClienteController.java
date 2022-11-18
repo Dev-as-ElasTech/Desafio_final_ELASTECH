@@ -1,9 +1,9 @@
 package br.com.divasbank.controller;
 
 import br.com.divasbank.model.Cliente;
-import br.com.divasbank.model.Transacao;
+import br.com.divasbank.model.Conta;
 import br.com.divasbank.service.ClienteService;
-import org.apache.coyote.Response;
+import br.com.divasbank.service.ContaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,21 +19,19 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
 
+    @Autowired
+    ContaService contaService;
+
+    private Conta conta;
+
     @GetMapping
-    public List<Cliente> listarTodos() {
-        return clienteService.listarTodos();
+    public ResponseEntity<List<Cliente>> listarTodos() {
+        return ResponseEntity.ok(clienteService.listarTodos());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<String> listarPorId(@PathVariable Long id) {
-//        try {
-//            Optional<Cliente> cliente = clienteService.listarClientePorId(id);
-//            return ResponseEntity.ok().body(cliente).getBody();
-//        } catch (Exception e){
-//            String msg = e.getMessage();
-//            return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
-//        }
-        return new ResponseEntity<>("Cliente encontrado", HttpStatus.OK);
+    public ResponseEntity<Cliente> listarPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(clienteService.listarClientePorId(id).get());
     }
 
     @PostMapping
@@ -48,21 +46,17 @@ public class ClienteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> editar(@PathVariable Long id, @RequestBody Cliente cliente){
-        try {
-            cliente.setId(id);
-            clienteService.editar(cliente);
-            return new ResponseEntity<>("Cliente atualizado com sucesso", HttpStatus.OK);
-        } catch (Exception e) {
-            String msg = e.getMessage();
-            return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
-        }
+    public ResponseEntity<Cliente> editar(@PathVariable Long id, @RequestBody Cliente cliente){
+        cliente.setId(id);
+        clienteService.editar(id, cliente );
+        return ResponseEntity.ok(cliente);
     }
 
-    @PatchMapping("/{id}")
-    public String inativar(@PathVariable Long id, @RequestBody Cliente cliente){
-
-        return "inativar cliente";
+    @PutMapping("inativar/{id}")
+    public ResponseEntity<Cliente> inativar(@PathVariable Long id){
+        Optional<Cliente> clienteBd = clienteService.listarClientePorId(id);
+        clienteService.inativar(id, clienteBd.get());
+        return ResponseEntity.ok(clienteBd.get());
     }
 
 }
