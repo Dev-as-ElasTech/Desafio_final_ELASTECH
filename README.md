@@ -1,6 +1,6 @@
 # Desafio_final_ELASTECH
 
-<h1>Banco API  - Java</h1>  
+<h1>Banco API  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" height="40"  /> </h1>  
 
 Banco `Divas Bank` API para Projeto Final `#ElasTech` `@PagBank/PagSeguro`. 
 
@@ -25,10 +25,10 @@ Implementação de CRUD  utilizando banco de dados `MySQL` e linguagem `Java` e 
 
 
 
-##Foto do teste / Endpoint/ Rotas
-  <img src="https://i.imgur.com/UBHcWKt.png" alt="Sacola API Swagger UI">
+##  Endpoints/Rotas
+  Prints 
 
-<h3>## Ferramentas e Tecnologias </h3>
+ ## Ferramentas e Tecnologias 
 
 <table>
 <tr>
@@ -81,7 +81,7 @@ Implementação de CRUD  utilizando banco de dados `MySQL` e linguagem `Java` e 
 </tr>
 </table>
 
-<h3>Autores</h3>
+<h3> :yellow_heart: Autores :green_heart: </h3>
 
 <div>
 
