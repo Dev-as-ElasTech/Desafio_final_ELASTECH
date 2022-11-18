@@ -9,7 +9,8 @@ Implementação de CRUD  utilizando banco de dados `MySQL` e linguagem `Java` e 
 <h2>Status do Projeto</h2>
 
 <p align="center"> Banco API 💻 Em construção... </p>
-
+ 
+ ## Arquitetura da API
 <h3>Features</h3>
 
 - [x] Cadastro de Clientes<br>
