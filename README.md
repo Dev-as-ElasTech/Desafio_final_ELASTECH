@@ -1,6 +1,6 @@
 # Desafio_final_ELASTECH
 
-<h1>Banco API  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" height="40"  /> </h1>  
+<h1>Banco API  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="50" height="50"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" height="40"  /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" width="40" height="40" /> </h1>  
 
 Banco `Divas Bank` API para Projeto Final `#ElasTech` `@PagBank/PagSeguro`. 
 
