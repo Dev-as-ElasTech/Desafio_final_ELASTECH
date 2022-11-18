@@ -1,9 +1,6 @@
 package br.com.divasbank.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -24,15 +21,14 @@ public class Cliente {
     @OneToOne
     Conta conta;
 
-    @JsonIgnore
-    @OneToMany(mappedBy="cliente")
-    List<Endereco> listaEnderecos;
+    @OneToOne
+    Endereco endereco;
 
     public Cliente() {
     }
 
-    public Cliente(Long id, String nome, String cpf, String email, String dataNascimento, Integer telefone, Double rendaMensal, Integer agencia, Boolean ativo, Conta conta, List<Endereco> listaEnderecos) {
-        this.id= id;
+    public Cliente(Long id, String nome, String cpf, String email, String dataNascimento, Integer telefone, Double rendaMensal, Integer agencia, Boolean ativo, Conta conta, Endereco endereco) {
+        this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -42,7 +38,7 @@ public class Cliente {
         this.agencia = agencia;
         this.ativo = ativo;
         this.conta = conta;
-        this.listaEnderecos = listaEnderecos;
+        this.endereco = endereco;
     }
 
     public Conta getConta() {
@@ -52,11 +48,6 @@ public class Cliente {
     public void setConta(Conta conta) {
         this.conta = conta;
     }
-
-    public List<Endereco> getListaEndereco() {
-        return listaEnderecos;
-    }
-
 
     public Long getId() {
         return id;
@@ -122,20 +113,20 @@ public class Cliente {
         this.agencia = agencia;
     }
 
-    public List<Endereco> getListaEnderecos() {
-        return listaEnderecos;
-    }
-
-    public void setListaEnderecos(List<Endereco> listaEnderecos) {
-        this.listaEnderecos = listaEnderecos;
-    }
-
     public Boolean getAtivo() {
         return ativo;
     }
 
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     @Override

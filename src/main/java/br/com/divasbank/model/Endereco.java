@@ -18,9 +18,6 @@ public class Endereco {
     private String cep;
     private String pais;
 
-    @ManyToOne
-    private Cliente cliente;
-
     public Endereco() {
     }
 
