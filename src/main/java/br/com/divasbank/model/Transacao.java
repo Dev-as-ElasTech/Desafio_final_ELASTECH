@@ -7,30 +7,35 @@ import java.util.Objects;
 public class Transacao {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Double valor;
+
     private String dataTransacao;
 
     private String tipoTransacao;
-    @ManyToOne
-    @JoinColumn(referencedColumnName = "id")
-    Conta contaOrigem;
+//    @ManyToOne
+//    @JoinColumn(referencedColumnName = "id")
+//    Conta contaOrigem;
+//
+//    @ManyToOne
+//    @JoinColumn(referencedColumnName = "id")
+//    Conta contaDestino;
 
-    @ManyToOne
-    @JoinColumn(referencedColumnName = "id")
-    Conta contaDestino;
+    private Long idContaOrigem;
+
+    private Long numeroContaDestino;
 
     public Transacao() {
     }
 
-    public Transacao(Long id, Double valor, String dataTransacao, String tipoTransacao, Conta contaOrigem, Conta contaDestino) {
+    public Transacao(Long id, Double valor, String dataTransacao, String tipoTransacao, Long idContaOrigem, Long numeroContaDestino) {
         this.id = id;
         this.valor = valor;
         this.dataTransacao = dataTransacao;
         this.tipoTransacao = tipoTransacao;
-        this.contaOrigem = contaOrigem;
-        this.contaDestino = contaDestino;
+        this.idContaOrigem = idContaOrigem;
+        this.numeroContaDestino = numeroContaDestino;
     }
 
     public Long getIdTransacao() {
@@ -69,20 +74,28 @@ public class Transacao {
         this.tipoTransacao = tipoTransacao;
     }
 
-    public Conta getContaOrigem() {
-        return contaOrigem;
+    public Long getId() {
+        return id;
     }
 
-    public void setContaOrigem(Conta contaOrigem) {
-        this.contaOrigem = contaOrigem;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public Conta getContaDestino() {
-        return contaDestino;
+    public Long getIdContaOrigem() {
+        return idContaOrigem;
     }
 
-    public void setContaDestino(Conta contaDestino) {
-        this.contaDestino = contaDestino;
+    public void setIdContaOrigem(Long idContaorigem) {
+        this.idContaOrigem = idContaorigem;
+    }
+
+    public Long getNumeroContaDestino() {
+        return numeroContaDestino;
+    }
+
+    public void setNumeroContaDestino(Long numeroContaDestino) {
+        this.numeroContaDestino = numeroContaDestino;
     }
 
     @Override

@@ -12,26 +12,26 @@ public class Conta {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Integer numero;
+    private Long numero;
     private Integer digito;
     private Double saldo;
     private Boolean verificaChequeEspecial;
     private Double chequeEspecial;
     private Boolean ativo;
 
-
-    @OneToMany(mappedBy="contaOrigem")
-    @JsonIgnore
-    private List<Transacao> listaTransacoesOrigem;
-
-    @OneToMany(mappedBy="contaDestino")
-    @JsonIgnore
-    private List<Transacao> listaTransacoesDestino;
+//
+//    @OneToMany(mappedBy="contaOrigem")
+//    @JsonIgnore
+//    private List<Transacao> listaTransacoesOrigem;
+//
+//    @OneToMany(mappedBy="contaDestino")
+//    @JsonIgnore
+//    private List<Transacao> listaTransacoesDestino;
 
     public Conta() {
     }
 
-    public Conta(Long id, Integer numero, Integer digito, Double saldo, Boolean verificaChequeEspecial, Double chequeEspecial, Boolean ativo, List<Transacao> listaTransacoesOrigem, List<Transacao> listaTransacoesDestino) {
+    public Conta(Long id, Long numero, Integer digito, Double saldo, Boolean verificaChequeEspecial, Double chequeEspecial, Boolean ativo, List<Transacao> listaTransacoesOrigem, List<Transacao> listaTransacoesDestino) {
         this.id = id;
         this.numero = numero;
         this.digito = digito;
@@ -39,8 +39,8 @@ public class Conta {
         this.verificaChequeEspecial = verificaChequeEspecial;
         this.chequeEspecial = chequeEspecial;
         this.ativo = ativo;
-        this.listaTransacoesOrigem = listaTransacoesOrigem;
-        this.listaTransacoesDestino = listaTransacoesDestino;
+//        this.listaTransacoesOrigem = listaTransacoesOrigem;
+//        this.listaTransacoesDestino = listaTransacoesDestino;
     }
 
     public void setId(Long id) {
@@ -51,11 +51,11 @@ public class Conta {
         return id;
     }
 
-    public Integer getNumero() {
+    public Long getNumero() {
         return numero;
     }
 
-    public void setNumero(Integer numero) {
+    public void setNumero(Long numero) {
         this.numero = numero;
     }
 
@@ -91,21 +91,21 @@ public class Conta {
         this.chequeEspecial = chequeEspecial;
     }
 
-    public List<Transacao> getListaTransacoesOrigem() {
-        return listaTransacoesOrigem;
-    }
-
-    public void setListaTransacoesOrigem(List<Transacao> listaTransacoesOrigem) {
-        this.listaTransacoesOrigem = listaTransacoesOrigem;
-    }
-
-    public List<Transacao> getListaTransacoesDestino() {
-        return listaTransacoesDestino;
-    }
-
-    public void setListaTransacoesDestino(List<Transacao> listaTransacoesDestino) {
-        this.listaTransacoesDestino = listaTransacoesDestino;
-    }
+//    public List<Transacao> getListaTransacoesOrigem() {
+//        return listaTransacoesOrigem;
+//    }
+//
+//    public void setListaTransacoesOrigem(List<Transacao> listaTransacoesOrigem) {
+//        this.listaTransacoesOrigem = listaTransacoesOrigem;
+//    }
+//
+//    public List<Transacao> getListaTransacoesDestino() {
+//        return listaTransacoesDestino;
+//    }
+//
+//    public void setListaTransacoesDestino(List<Transacao> listaTransacoesDestino) {
+//        this.listaTransacoesDestino = listaTransacoesDestino;
+//    }
 
     public Boolean getAtivo() {
         return ativo;

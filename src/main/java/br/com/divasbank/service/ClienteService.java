@@ -29,9 +29,18 @@ public class ClienteService {
         return clienteRepository.findAll();
     }
 
-    public Optional<Cliente> listarClientePorId(Long id) {
-        return clienteRepository.findById(id);
+    public List<Cliente> listarTodosAtivos() {
+        return clienteRepository.listarTodosClientesAtivos();
     }
+
+    public Cliente listarClientePorId(Long id) {
+        Optional<Cliente> cliente = clienteRepository.findById(id);
+        return cliente.get();
+    }
+
+//    public Optional<Cliente> listarClientePorId(Long id) {
+//        return clienteRepository.findById(id);
+//    }
 
     public void cadastrar(Cliente cliente) {
         Conta contaNova = contaRepository.save(cliente.getConta());

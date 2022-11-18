@@ -19,19 +19,19 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
 
-    @Autowired
-    ContaService contaService;
-
-    private Conta conta;
-
     @GetMapping
     public ResponseEntity<List<Cliente>> listarTodos() {
         return ResponseEntity.ok(clienteService.listarTodos());
     }
 
+    @GetMapping("/ativos")
+    public ResponseEntity<List<Cliente>> listarTodosAtivos() {
+        return ResponseEntity.ok(clienteService.listarTodosAtivos());
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> listarPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(clienteService.listarClientePorId(id).get());
+        return ResponseEntity.ok(clienteService.listarClientePorId(id));
     }
 
     @PostMapping
@@ -39,6 +39,7 @@ public class ClienteController {
         try {
             clienteService.cadastrar(cliente);
             return new ResponseEntity<>("Cliente cadastrado com sucesso", HttpStatus.CREATED);
+
         } catch (Exception e) {
             String msg = e.getMessage();
             return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
@@ -54,7 +55,7 @@ public class ClienteController {
 
     @PutMapping("inativar/{id}")
     public ResponseEntity<Cliente> inativar(@PathVariable Long id){
-        Optional<Cliente> clienteBd = clienteService.listarClientePorId(id);
+        Optional<Cliente> clienteBd = Optional.ofNullable(clienteService.listarClientePorId(id));
         clienteService.inativar(id, clienteBd.get());
         return ResponseEntity.ok(clienteBd.get());
     }

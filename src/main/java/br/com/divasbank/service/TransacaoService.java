@@ -1,5 +1,6 @@
 package br.com.divasbank.service;
 
+import br.com.divasbank.model.Conta;
 import br.com.divasbank.model.Transacao;
 import br.com.divasbank.repository.TransacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,11 @@ public class TransacaoService {
     @Autowired
     TransacaoRepository transacaoRepository;
 
+    @Autowired
+    ContaService contaService;
+    @Autowired
+    private ContaService contaservice;
+
     public List<Transacao> listarTodas() {
         return transacaoRepository.findAll();
     }
@@ -27,6 +33,17 @@ public class TransacaoService {
 //    }
 
     public Transacao cadastrar(Transacao transacao) {
+
         return transacaoRepository.save(transacao);
+    }
+
+    public void transferir(Transacao transacao) {
+        Conta contaOrigem = contaService.listarPorId((transacao.getIdContaOrigem()));
+        Conta contaDestino = contaService.acharNumeroConta(transacao.getNumeroContaDestino());
+
+        contaOrigem.setSaldo(contaOrigem.getSaldo() - transacao.getValor());
+        contaDestino.setSaldo(contaDestino.getSaldo() + transacao.getValor());
+        transacaoRepository.save(transacao);
+
     }
 }

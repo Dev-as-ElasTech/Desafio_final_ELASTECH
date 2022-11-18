@@ -1,9 +1,9 @@
 package br.com.divasbank.controller;
 
 
+import br.com.divasbank.model.Cliente;
 import br.com.divasbank.model.Transacao;
 import br.com.divasbank.service.TransacaoService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,28 +19,22 @@ public class TransacaoController {
     TransacaoService transacaoService;
 
     @GetMapping
-    public List<Transacao> listarTodas() {
-        return transacaoService.listarTodas();
+    public ResponseEntity<List<Transacao>> listarTodas() {
+        return ResponseEntity.ok(transacaoService.listarTodas());
+    }
+   @GetMapping("/{id}")
+   public ResponseEntity<Transacao> listarPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(transacaoService.listarPorId(id).get());
     }
 
-    @GetMapping("/{id}")
-    public String listarPorId(@PathVariable Long id) {
-
-        return "Listado por Id";
-    }
-    @GetMapping("/{idCliente}")
-    public String listarPorCliente(@PathVariable Long idCliente) {
+    @GetMapping("/{idConta}")
+    public String extratoTransacaoPorConta(@PathVariable Long idCliente) {
 
         return "Listado por cliente";
     }
 
-//    @PostMapping
-//    public String cadastrar(@RequestBody Transacao transacao) {
-//        System.out.println(transacao.getValor());
-//        return "Transação Realizada!";
-//    }
-
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<String> cadastrar(@RequestBody Transacao transacao) {
         try {
             transacaoService.cadastrar(transacao);
@@ -51,6 +45,10 @@ public class TransacaoController {
         }
     }
 
+    @PostMapping("/efetuar")
+    public void efetuarTransacao(@RequestBody Transacao transacao) {
+         transacaoService.transferir(transacao);
+    }
 
 }
 

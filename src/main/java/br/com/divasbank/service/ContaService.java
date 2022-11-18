@@ -18,12 +18,21 @@ public class ContaService {
         return contaRepository.findAll();
     }
 
-    public Optional<Conta> listarPorId(Long id) {
-       return contaRepository.findById(id);
+//    public Optional<Conta> listarPorId(Long id) {
+//       return contaRepository.findById(id);
+//    }
+
+    public Conta listarPorId(Long id_conta){
+        Optional<Conta> conta = contaRepository.findById(id_conta);
+        return conta.get();
     }
 
     public Conta cadastrar(Conta conta) {
        return contaRepository.save(conta);
+    }
+
+    public Conta acharNumeroConta(Long numero){
+        return contaRepository.findByNumeroConta(numero);
     }
 
     public Conta inativar(Conta conta) {
