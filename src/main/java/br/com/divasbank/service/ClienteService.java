@@ -52,11 +52,13 @@ public class ClienteService {
 
     public void editar(Long id, Cliente cliente) {
         Optional<Cliente> clienteBd = clienteRepository.findById(id);
+
         if (clienteBd.isPresent()) {
+            clienteBd.get().setNome(cliente.getNome());
             clienteRepository.save(cliente);
         }
     }
-    public void inativar(Long id, Cliente cliente) {
+    public void inativar(Cliente cliente) {
             cliente.setAtivo(false);
             clienteRepository.save(cliente);
         }

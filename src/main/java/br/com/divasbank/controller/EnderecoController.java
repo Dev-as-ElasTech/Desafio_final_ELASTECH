@@ -1,12 +1,13 @@
 package br.com.divasbank.controller;
 
 import br.com.divasbank.model.Endereco;
-import br.com.divasbank.repository.EnderecoRepository;
 import br.com.divasbank.service.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("endereco")
@@ -21,32 +22,15 @@ public class EnderecoController {
     }
 
     @GetMapping("/{id}")
-    public String listarEnderecoPorId(@PathVariable Long id) {
-
-        return "Listar Endereço por Id";
-    }
-
-    @GetMapping("/{idClinte}")
-    public String listarEnderecoPorCliente(@PathVariable Long idCliente) {
-
-        return "Listar Endereços por Cliente";
-    }
-
-    @PostMapping
-    public String cadastrar(@RequestBody Endereco endereco) {
-
-        return "Cadastrar Endereço";
+    public ResponseEntity<Optional<Endereco>> listarEnderecoPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(enderecoService.listarEnderecoPorId(id));
     }
 
     @PutMapping("/{id}")
-    public String editar(@PathVariable Long id, @RequestBody Endereco endereco) {
-
-        return "Editar Endereço";
+    public ResponseEntity<Endereco> editar(@PathVariable Long id, @RequestBody Endereco endereco) {
+        endereco.setIdEndereco(id);
+        enderecoService.editar(id, endereco);
+        return ResponseEntity.ok(endereco);
     }
 
-    @DeleteMapping("/{id}")
-    public String deletar(@PathVariable Long id){
-        System.out.println(id);
-        return "Deletar Endereço";
-    }
 }

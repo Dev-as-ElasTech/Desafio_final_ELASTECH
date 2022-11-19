@@ -30,16 +30,10 @@ public class EnderecoService {
         return enderecoRepository.findById(id);
     } */
 
-    public Endereco cadastrar(Endereco endereco) {
-        return enderecoRepository.save(endereco);
-    }
 
-    public Endereco editar(Endereco endereco) {
+    public Endereco editar(Long id, Endereco endereco) {
         listarEnderecoPorId(endereco.getIdEndereco());
         return enderecoRepository.save(endereco);
     }
 
-    public void deletar(Long id) {
-        enderecoRepository.deleteById(id);
-    }
 }
