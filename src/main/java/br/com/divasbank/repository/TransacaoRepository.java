@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface TransacaoRepository extends JpaRepository<Transacao, Long> {
-    @Query(value = "SELECT * FROM transacao WHERE CONTA_ORIGEM_ID = ?1 OR CONTA_DESTINO_ID = ?1" , nativeQuery = true)
-    List<Transacao> encontrarTransacoesPorContaId(Long idConta);
+    @Query(value = "SELECT * FROM transacao WHERE ID_CONTA_ORIGEM = ?1" , nativeQuery = true)
+    List<Transacao> encontrarTransacoesPorContaId(Long id);
 }

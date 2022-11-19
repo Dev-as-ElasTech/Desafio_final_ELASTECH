@@ -1,6 +1,7 @@
 package br.com.divasbank.model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -21,8 +22,8 @@ public class Cliente {
     @OneToOne
     Conta conta;
 
-    @OneToOne
-    Endereco endereco;
+    @OneToMany(cascade = CascadeType.PERSIST)
+    List<Endereco> endereco;
 
     public Cliente() {
     }
@@ -38,7 +39,7 @@ public class Cliente {
         this.agencia = agencia;
         this.ativo = ativo;
         this.conta = conta;
-        this.endereco = endereco;
+        //this.endereco = endereco;
     }
 
     public Conta getConta() {
@@ -121,11 +122,20 @@ public class Cliente {
         this.ativo = ativo;
     }
 
-    public Endereco getEndereco() {
+//    public Endereco getEndereco() {
+//        return endereco;
+//    }
+//
+//    public void setEndereco(Endereco endereco) {
+//        this.endereco = endereco;
+//    }
+
+
+    public List<Endereco> getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(List<Endereco> endereco) {
         this.endereco = endereco;
     }
 

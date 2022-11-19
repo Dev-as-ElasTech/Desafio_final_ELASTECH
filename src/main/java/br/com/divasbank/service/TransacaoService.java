@@ -28,13 +28,13 @@ public class TransacaoService {
         return transacaoRepository.findById(id);
     }
 
-//    public void listarPorIdCliente() {
-//
-//    }
+    public List<Transacao> listarPorIdConta(Long idConta) {
 
-    public Transacao cadastrar(Transacao transacao) {
+        return transacaoRepository.encontrarTransacoesPorContaId(idConta);
+    }
 
-        return transacaoRepository.save(transacao);
+    public void cadastrar(Transacao transacao) {
+        transacaoRepository.save(transacao);
     }
 
     public void transferir(Transacao transacao) {
@@ -44,6 +44,5 @@ public class TransacaoService {
         contaOrigem.setSaldo(contaOrigem.getSaldo() - transacao.getValor());
         contaDestino.setSaldo(contaDestino.getSaldo() + transacao.getValor());
         transacaoRepository.save(transacao);
-
     }
 }
