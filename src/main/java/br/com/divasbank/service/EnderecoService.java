@@ -35,7 +35,7 @@ public class EnderecoService {
     }
 
     public Endereco editar(Endereco endereco) {
-        listarEnderecoPorId(endereco.getId());
+        listarEnderecoPorId(endereco.getIdEndereco());
         return enderecoRepository.save(endereco);
     }
 
