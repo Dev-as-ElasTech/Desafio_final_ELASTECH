@@ -9,7 +9,11 @@ Implementação de CRUD  utilizando banco de dados `MySQL` e linguagem `Java` e 
 <h2>Status do Projeto</h2>
 
 <p align="center"> Banco API 💻 Em construção... </p>
-
+ 
+ ## Arquitetura da API
+ 
+ ![ArqAPI](https://user-images.githubusercontent.com/79167856/202822321-c0bd3a98-ace6-485e-a830-0e95d8e4388a.jpeg)
+ 
 <h3>Features</h3>
 
 - [x] Cadastro de Clientes<br>
@@ -28,7 +32,9 @@ Implementação de CRUD  utilizando banco de dados `MySQL` e linguagem `Java` e 
 ##  Endpoints/Rotas
   Prints 
 
- ## Ferramentas e Tecnologias 
+##  Testes no Postman
+
+## Ferramentas e Tecnologias 
 
 <table>
 <tr>
