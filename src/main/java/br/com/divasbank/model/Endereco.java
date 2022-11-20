@@ -12,7 +12,7 @@ public class Endereco {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long idEndereco;
     private String rua;
     private String numero;
     private String bairro;
@@ -24,8 +24,8 @@ public class Endereco {
     public Endereco() {
     }
 
-    public Endereco(Long id, String rua, String numero, String bairro, String cidade, String estado, String cep, String pais) {
-        this.id = id;
+    public Endereco(Long idEndereco, String rua, String numero, String bairro, String cidade, String estado, String cep, String pais) {
+        this.idEndereco = idEndereco;
         this.rua = rua;
         this.numero = numero;
         this.bairro = bairro;
@@ -35,12 +35,12 @@ public class Endereco {
         this.pais = pais;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdEndereco() {
+        return idEndereco;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdEndereco(Long idEndereco) {
+        this.idEndereco = idEndereco;
     }
 
     public String getRua() {
@@ -104,11 +104,11 @@ public class Endereco {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Endereco endereco = (Endereco) o;
-        return Objects.equals(id, endereco.id);
+        return Objects.equals(idEndereco, endereco.idEndereco);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(idEndereco);
     }
 }

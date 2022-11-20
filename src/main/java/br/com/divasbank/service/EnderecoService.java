@@ -32,7 +32,7 @@ public class EnderecoService {
 
 
     public Endereco editar(Long id, Endereco endereco) {
-        listarEnderecoPorId(endereco.getId());
+        listarEnderecoPorId(endereco.getIdEndereco());
         return enderecoRepository.save(endereco);
     }
 
