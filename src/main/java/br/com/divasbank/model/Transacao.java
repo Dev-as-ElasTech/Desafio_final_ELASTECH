@@ -14,28 +14,21 @@ public class Transacao {
     private String dataTransacao;
 
     private String tipoTransacao;
-//    @ManyToOne
-//    @JoinColumn(referencedColumnName = "id")
-//    Conta contaOrigem;
-//
-//    @ManyToOne
-//    @JoinColumn(referencedColumnName = "id")
-//    Conta contaDestino;
-
-    private Long idContaOrigem;
 
     private Long numeroContaDestino;
+
+    private Long numeroContaOrigem;
 
     public Transacao() {
     }
 
-    public Transacao(Long id, Double valor, String dataTransacao, String tipoTransacao, Long idContaOrigem, Long numeroContaDestino) {
+    public Transacao(Long id, Double valor, String dataTransacao, String tipoTransacao, Long numeroContaDestino, Long numeroContaOrigem) {
         this.id = id;
         this.valor = valor;
         this.dataTransacao = dataTransacao;
         this.tipoTransacao = tipoTransacao;
-        this.idContaOrigem = idContaOrigem;
         this.numeroContaDestino = numeroContaDestino;
+        this.numeroContaOrigem = numeroContaOrigem;
     }
 
     public Long getIdTransacao() {
@@ -82,14 +75,6 @@ public class Transacao {
         this.id = id;
     }
 
-    public Long getIdContaOrigem() {
-        return idContaOrigem;
-    }
-
-    public void setIdContaOrigem(Long idContaorigem) {
-        this.idContaOrigem = idContaorigem;
-    }
-
     public Long getNumeroContaDestino() {
         return numeroContaDestino;
     }
@@ -109,5 +94,13 @@ public class Transacao {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public Long getNumeroContaOrigem() {
+        return numeroContaOrigem;
+    }
+
+    public void setNumeroContaOrigem(Long numeroContaOrigem) {
+        this.numeroContaOrigem = numeroContaOrigem;
     }
 }
