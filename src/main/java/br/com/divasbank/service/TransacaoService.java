@@ -17,6 +17,8 @@ public class TransacaoService {
 
     @Autowired
     ContaService contaService;
+    @Autowired
+    private ContaService contaservice;
 
     public List<Transacao> listarTodas() {
         return transacaoRepository.findAll();
@@ -73,4 +75,4 @@ public class TransacaoService {
         contaDestino.setSaldo(contaDestino.getSaldo() + transacao.getValor());
         transacaoRepository.save(transacao);
     }
- }
+}

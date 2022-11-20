@@ -28,7 +28,7 @@ public class EnderecoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Endereco> editar(@PathVariable Long id, @RequestBody Endereco endereco) {
-        endereco.setId(id);
+        endereco.setIdEndereco(id);
         enderecoService.editar(id, endereco);
         return ResponseEntity.ok(endereco);
     }
