@@ -31,27 +31,18 @@ public class TransacaoController {
     @GetMapping("/extrato/{id}")
     public ResponseEntity<List<Transacao>> extratoTransacaoPorConta(@PathVariable Long id) {
 
-        return ResponseEntity.ok(transacaoService.listarPorIdConta(id));
+        return ResponseEntity.ok(transacaoService.listarPorNumeroConta(id));
     }
 
-//    @PostMapping
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public ResponseEntity<String> cadastrar(@RequestBody Transacao transacao) {
-//        try {
-//            transacaoService.cadastrar(transacao);
-//            return new ResponseEntity<>("Transação efetuada com sucesso", HttpStatus.CREATED);
-//        } catch (Exception e) {
-//            String msg = e.getMessage();
-//            return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
-//        }
-//    }
-
-    @PostMapping("/efetuar")
-    public void efetuarTransacao(@RequestBody Transacao transacao) {
-          transacaoService.transferir(transacao);
+    @PostMapping
+    public ResponseEntity<String> cadastrar(@RequestBody Transacao transacao) {
+        try {
+            transacaoService.transferir(transacao);
+            return new ResponseEntity<>("Transação efetuada com sucesso", HttpStatus.CREATED);
+        } catch (Exception e) {
+            String msg = e.getMessage();
+            return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
+        }
     }
-
-
-
 }
 
