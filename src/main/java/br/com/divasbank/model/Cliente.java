@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -14,15 +13,30 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(nullable=false,length = 255)
     private String nome;
+
+    @Column(nullable = false,length = 14, unique = true, updatable = false)
     private String cpf;
+
+    @Column(nullable = false, length = 100, unique = true)
     private String email;
+
+    @Column(nullable = false, length = 12)
     private String dataNascimento;
+
+    @Column(nullable = false)
     private Integer telefone;
+
+    @Column(nullable = false)
     private Double rendaMensal;
+
     @Column(insertable = true, updatable = false)
     private Integer agencia;
-    private Boolean ativo;
+
+    @Column(nullable=false)
+    private Boolean ativo = true;
 
     @OneToOne
     Conta conta;
