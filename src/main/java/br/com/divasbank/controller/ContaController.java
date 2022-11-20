@@ -28,7 +28,13 @@ public class ContaController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Conta> listarPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(contaService.listarPorId(id));
+        try {
+            return ResponseEntity.ok(contaService.listarPorId(id));
+        } catch (Exception e) {
+            String msg = e.getMessage();
+            return new ResponseEntity(msg, HttpStatus.BAD_REQUEST);
+        }
+
     }
 
 

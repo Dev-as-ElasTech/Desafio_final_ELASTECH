@@ -18,17 +18,13 @@ public class ContaService {
         return contaRepository.findAll();
     }
 
-//    public Optional<Conta> listarPorId(Long id) {
-//       return contaRepository.findById(id);
-//    }
-
-    public Conta listarPorId(Long id_conta){
+    public Conta listarPorId(Long id_conta) throws Exception {
         Optional<Conta> conta = contaRepository.findById(id_conta);
-        return conta.get();
-    }
-
-    public Conta cadastrar(Conta conta) {
-       return contaRepository.save(conta);
+        if(conta.isPresent()){
+            return conta.get();
+        } else {
+            throw new Exception("Conta não encontrada,informe um id válido.");
+        }
     }
 
     public Conta acharNumeroConta(Long numero){
