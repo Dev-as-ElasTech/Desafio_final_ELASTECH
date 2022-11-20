@@ -21,7 +21,8 @@ public class TransacaoController {
     public ResponseEntity<List<Transacao>> listarTodas() {
         return ResponseEntity.ok(transacaoService.listarTodas());
     }
-   @GetMapping("/{id}")
+
+    @GetMapping("/{id}")
    public ResponseEntity<Transacao> listarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(transacaoService.listarPorId(id).get());
     }

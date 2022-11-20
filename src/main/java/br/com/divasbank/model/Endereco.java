@@ -1,10 +1,13 @@
 package br.com.divasbank.model;
 
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@DynamicUpdate
 public class Endereco {
 
     @Id

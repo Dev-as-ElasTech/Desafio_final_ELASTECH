@@ -36,8 +36,7 @@ public class ContaService {
     }
 
     public Conta inativar(Conta conta) {
-        listarPorId(conta.getId());
-        conta.setAtivo(false);
+       conta.setAtivo(false);
         return contaRepository.save(conta);
     }
 }

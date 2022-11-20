@@ -18,6 +18,8 @@ public class ClienteController {
 
     @Autowired
     ClienteService clienteService;
+    @Autowired
+    ContaService contaService;
 
     @GetMapping
     public ResponseEntity<List<Cliente>> listarTodos() {
@@ -56,7 +58,8 @@ public class ClienteController {
     @PutMapping("inativar/{id}")
     public ResponseEntity<Cliente> inativar(@PathVariable Long id){
         Optional<Cliente> clienteBd = Optional.ofNullable(clienteService.listarClientePorId(id));
-        clienteService.inativar(id, clienteBd.get());
+        clienteService.inativar(clienteBd.get());
+        contaService.inativar(clienteBd.get().getConta());
         return ResponseEntity.ok(clienteBd.get());
     }
 
