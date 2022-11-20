@@ -1,6 +1,5 @@
 package br.com.divasbank.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import org.hibernate.annotations.DynamicUpdate;
 

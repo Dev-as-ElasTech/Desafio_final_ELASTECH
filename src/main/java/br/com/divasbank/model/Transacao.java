@@ -3,6 +3,7 @@ package br.com.divasbank.model;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -12,27 +13,33 @@ public class Transacao {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(nullable=false)
     private Double valor;
 
-    private String dataTransacao;
-
+    @Column(nullable=false,length = 60)
     private String tipoTransacao;
 
+    @Column(nullable=false)
     private Long numeroContaOrigem;
 
+    @Column(nullable=false)
     private Long numeroContaDestino;
+
+    @Column(updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date data = new java.sql.Date(System.currentTimeMillis());
 
     public Transacao() {
     }
 
-    public Transacao(Long id, Double valor, String dataTransacao, String tipoTransacao, Long idContaOrigem, Long numeroContaOrigem, Long numeroContaDestino) {
+    public Transacao(Long id, Double valor, String tipoTransacao, Long numeroContaOrigem, Long numeroContaDestino, Date data) {
         this.id = id;
         this.valor = valor;
-        this.dataTransacao = dataTransacao;
         this.tipoTransacao = tipoTransacao;
         this.numeroContaOrigem = numeroContaOrigem;
-        //this.idContaOrigem = idContaOrigem;
         this.numeroContaDestino = numeroContaDestino;
+        this.data = data;
     }
 
     public Long getIdTransacao() {
@@ -55,14 +62,6 @@ public class Transacao {
         this.valor = valor;
     }
 
-    public String getDataTransacao() {
-        return dataTransacao;
-    }
-
-    public void setDataTransacao(String dataTransacao) {
-        this.dataTransacao = dataTransacao;
-    }
-
     public String getTipoTransacao() {
         return tipoTransacao;
     }
@@ -79,20 +78,28 @@ public class Transacao {
         this.id = id;
     }
 
-//    public Long getIdContaOrigem() {
-//        return idContaOrigem;
-//    }
-//
-//    public void setIdContaOrigem(Long idContaorigem) {
-//        this.idContaOrigem = idContaorigem;
-//    }
-
     public Long getNumeroContaDestino() {
         return numeroContaDestino;
     }
 
     public void setNumeroContaDestino(Long numeroContaDestino) {
         this.numeroContaDestino = numeroContaDestino;
+    }
+
+    public Long getNumeroContaOrigem() {
+        return numeroContaOrigem;
+    }
+
+    public void setNumeroContaOrigem(Long numeroContaOrigem) {
+        this.numeroContaOrigem = numeroContaOrigem;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
     }
 
     @Override
@@ -107,12 +114,5 @@ public class Transacao {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-    public Long getNumeroContaOrigem() {
-        return numeroContaOrigem;
-    }
-
-    public void setNumeroContaOrigem(Long numeroContaOrigem) {
-        this.numeroContaOrigem = numeroContaOrigem;
-    }
 }
+

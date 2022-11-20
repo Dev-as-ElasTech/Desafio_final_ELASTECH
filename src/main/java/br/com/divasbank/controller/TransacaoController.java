@@ -28,10 +28,10 @@ public class TransacaoController {
         return ResponseEntity.ok(transacaoService.listarPorId(id).get());
     }
 
-    @GetMapping("/extrato/{id}")
-    public ResponseEntity<List<Transacao>> extratoTransacaoPorConta(@PathVariable Long id) {
+    @GetMapping("/extrato/{numeroContaOrigem}")
+    public ResponseEntity<List<Transacao>> extratoTransacaoPorConta(@PathVariable Long numeroContaOrigem) {
 
-        return ResponseEntity.ok(transacaoService.listarPorNumeroConta(id));
+        return ResponseEntity.ok(transacaoService.listarPorNumeroConta(numeroContaOrigem));
     }
 
     @PostMapping
