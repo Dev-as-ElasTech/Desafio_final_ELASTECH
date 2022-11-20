@@ -1,11 +1,13 @@
 package br.com.divasbank.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 @Entity
 @DynamicUpdate
@@ -14,12 +16,17 @@ public class Conta {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long numero;
-    private Integer digito;
-    private Double saldo;
+    @Column(length=4, unique=true, updatable=false, nullable=false)
+    private Long numero = new Random().nextLong(9999);
+    @Column(precision=1, updatable=false, nullable=false)
+    private Integer digito = new Random().nextInt(9);
+    @NotNull
+    @Column(nullable=false)
+    private Double saldo = 0d;
 
     //private Boolean verificaChequeEspecial;
     //private Double chequeEspecial;
+    @NotNull
     private Boolean ativo = true;
 
 
