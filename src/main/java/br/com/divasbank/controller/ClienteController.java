@@ -23,14 +23,14 @@ public class ClienteController {
 
     @GetMapping
     public ResponseEntity<List<Cliente>> listarTodos() {
-            return ResponseEntity.ok(clienteService.listarTodos());
+        return ResponseEntity.ok(clienteService.listarTodos());
     }
 
     @GetMapping("/ativos")
     public ResponseEntity<List<Cliente>> listarTodosAtivos() {
         return ResponseEntity.ok(clienteService.listarTodosAtivos());
     }
-    @ResponseStatus(HttpStatus.NOT_FOUND)
+
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> listarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(clienteService.listarClientePorId(id));
