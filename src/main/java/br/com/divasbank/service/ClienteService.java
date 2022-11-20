@@ -44,12 +44,13 @@ public class ClienteService {
         return cliente.orElseThrow( () -> new ClientNotFoundException());
     }
 
-    public void cadastrar(Cliente cliente) {
+    public Cliente cadastrar(Cliente cliente) {
         Conta contaNova = contaRepository.save(cliente.getConta());
         cliente.setConta(contaNova);
         Endereco endereco = enderecoRepository.save(cliente.getEndereco());
         cliente.setEndereco(endereco);
         clienteRepository.save(cliente);
+        return cliente;
     }
 
     public void editar(Long id, Cliente cliente) {

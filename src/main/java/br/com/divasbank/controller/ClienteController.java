@@ -37,15 +37,9 @@ public class ClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<String> cadastrar(@RequestBody Cliente cliente) {
-        try {
-            clienteService.cadastrar(cliente);
-            return new ResponseEntity<>("Cliente cadastrado com sucesso", HttpStatus.CREATED);
-
-        } catch (Exception e) {
-            String msg = e.getMessage();
-            return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
-        }
+    public ResponseEntity<Cliente> cadastrar(@RequestBody Cliente cliente) throws Exception {
+            Cliente novoCliente = clienteService.cadastrar(cliente);
+            return new ResponseEntity<>(novoCliente, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")

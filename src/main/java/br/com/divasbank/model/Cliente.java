@@ -1,6 +1,7 @@
 package br.com.divasbank.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -15,27 +16,35 @@ public class Cliente {
     private Long id;
 
     @Column(nullable=false,length = 255)
+    @NotNull
     private String nome;
 
     @Column(nullable = false,length = 14, unique = true, updatable = false)
+    @NotNull
     private String cpf;
 
     @Column(nullable = false, length = 100, unique = true)
+    @NotNull
     private String email;
 
     @Column(nullable = false, length = 12)
+    @NotNull
     private String dataNascimento;
 
     @Column(nullable = false)
+    @NotNull
     private Integer telefone;
 
     @Column(nullable = false)
+    @NotNull
     private Double rendaMensal;
 
     @Column(insertable = true, updatable = false)
-    private Integer agencia;
+    @NotNull
+    private Integer agencia = 1;
 
     @Column(nullable=false)
+    @NotNull
     private Boolean ativo = true;
 
     @OneToOne

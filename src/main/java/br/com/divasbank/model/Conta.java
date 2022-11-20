@@ -20,7 +20,8 @@ public class Conta {
 
     //private Boolean verificaChequeEspecial;
     //private Double chequeEspecial;
-    private Boolean ativo;
+    private Boolean ativo = true;
+
 
     public Conta() {
     }
