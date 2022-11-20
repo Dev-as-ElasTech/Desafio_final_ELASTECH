@@ -41,7 +41,6 @@ public class TransacaoService {
         Conta contaOrigem = contaService.listarPorId((transacao.getIdContaOrigem()));
         Conta contaDestino = contaService.acharNumeroConta(transacao.getNumeroContaDestino());
 
-        //if(contaOrigem.){}
         contaOrigem.setSaldo(contaOrigem.getSaldo() - transacao.getValor());
         contaDestino.setSaldo(contaDestino.getSaldo() + transacao.getValor());
         transacaoRepository.save(transacao);
