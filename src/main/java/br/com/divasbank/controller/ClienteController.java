@@ -37,6 +37,7 @@ public class ClienteController {
         return ResponseEntity.ok(clienteService.listarClientePorId(id));
     }
 
+
     @PostMapping
     public ResponseEntity<Cliente> cadastrar(@RequestBody Cliente cliente) throws Exception {
             Cliente novoCliente = clienteService.cadastrar(cliente);
