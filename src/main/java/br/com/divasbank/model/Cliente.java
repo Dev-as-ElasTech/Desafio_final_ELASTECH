@@ -32,7 +32,7 @@ public class Cliente {
 
     @Column(nullable = false)
     @NotNull
-    private Integer telefone;
+    private String telefone;
 
     @Column(nullable = false)
     @NotNull
@@ -55,7 +55,7 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(Long id, String nome, String cpf, String email, String dataNascimento, Integer telefone, Double rendaMensal, Integer agencia, Boolean ativo, Conta conta, Endereco endereco) {
+    public Cliente(Long id, String nome, String cpf, String email, String dataNascimento, String telefone, Double rendaMensal, Integer agencia, Boolean ativo, Conta conta, Endereco endereco) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -117,11 +117,11 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
     }
 
-    public Integer getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(Integer telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
