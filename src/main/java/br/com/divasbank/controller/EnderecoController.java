@@ -1,5 +1,6 @@
 package br.com.divasbank.controller;
 
+import br.com.divasbank.model.Cliente;
 import br.com.divasbank.model.Endereco;
 import br.com.divasbank.service.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class EnderecoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Endereco>> listarEnderecoPorId(@PathVariable Long id) {
+    public ResponseEntity<Endereco> listarEnderecoPorId(@PathVariable Long id) {
         return ResponseEntity.ok(enderecoService.listarEnderecoPorId(id));
     }
 
@@ -30,7 +31,8 @@ public class EnderecoController {
     public ResponseEntity<Endereco> editar(@PathVariable Long id, @RequestBody Endereco endereco) {
         endereco.setIdEndereco(id);
         enderecoService.editar(id, endereco);
-        return ResponseEntity.ok(endereco);
+        Optional<Endereco> enderecoBd = Optional.ofNullable(enderecoService.listarEnderecoPorId(id));
+        return ResponseEntity.ok(enderecoBd.get());
     }
 
 }

@@ -57,7 +57,14 @@ public class ClienteService {
             Cliente c = clienteBd.get();
             if (cliente.getNome() != null) {
                 c.setNome(cliente.getNome()); }
-
+            if (cliente.getEmail() != null) {
+                c.setEmail(cliente.getEmail()); }
+            if (cliente.getTelefone() != null) {
+                c.setTelefone(cliente.getTelefone()); }
+            if (cliente.getRendaMensal() != null) {
+                c.setRendaMensal(cliente.getRendaMensal()); }
+            if (cliente.getEndereco() != null) {
+                c.setEndereco(cliente.getEndereco()); }
             clienteRepository.save(c);
         }
     }

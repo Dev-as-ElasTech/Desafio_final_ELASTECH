@@ -20,20 +20,40 @@ public class EnderecoService {
         return enderecoRepository.findAll();
     }
 
-    public Optional<Endereco> listarEnderecoPorId(Long id) {
-        return enderecoRepository.findById(id);
+    public Endereco listarEnderecoPorId(Long id) {
+        Optional<Endereco> endereco= enderecoRepository.findById(id);
+        return endereco.get();
     }
 
-    //Falta implementar corretamente
-    /*public Optional<Endereco> listarEnderecoPorCliente(Long id) {
+    public void editar(Long id, Endereco endereco) {
+        listarEnderecoPorId(id);
+        Optional<Endereco> enderecoBd = enderecoRepository.findById(id);
 
-        return enderecoRepository.findById(id);
-    } */
-
-
-    public Endereco editar(Long id, Endereco endereco) {
-        listarEnderecoPorId(endereco.getIdEndereco());
-        return enderecoRepository.save(endereco);
+        if (enderecoBd.isPresent()) {
+            Endereco e = enderecoBd.get();
+            if (endereco.getRua() != null) {
+                e.setRua(endereco.getRua());
+            }
+            if (endereco.getNumero() != null) {
+                e.setNumero(endereco.getNumero());
+            }
+            if (endereco.getBairro() != null) {
+                e.setBairro(endereco.getBairro());
+            }
+            if (endereco.getCidade() != null) {
+                e.setCidade(endereco.getCidade());
+            }
+            if (endereco.getEstado() != null) {
+                e.setEstado(endereco.getEstado());
+            }
+            if (endereco.getCep() != null) {
+                e.setCep(endereco.getCep());
+            }
+            if (endereco.getPais() != null) {
+                e.setPais(endereco.getPais());
+            }
+            enderecoRepository.save(e);
+        }
     }
 
 }
