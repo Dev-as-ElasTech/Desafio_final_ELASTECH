@@ -1,5 +1,6 @@
 package br.com.divasbank.model;
 
+import com.sun.istack.NotNull;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -14,15 +15,18 @@ public class Transacao {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotNull
     @Column(nullable=false)
     private Double valor;
 
-    @Column(nullable=false,length = 60)
-    private String tipoTransacao;
 
+    @NotNull
+    @Column(nullable=false, length = 60)
+    private String tipoTransacao = "transferencia";
+    @NotNull
     @Column(nullable=false)
     private Long numeroContaOrigem;
-
+    @NotNull
     @Column(nullable=false)
     private Long numeroContaDestino;
 
