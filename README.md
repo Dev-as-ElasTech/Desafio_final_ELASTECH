@@ -46,11 +46,12 @@ Passar parâmetros no body da requisição em formato JSON:
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
 | `nome` | `String` | **Obrigatório** |
-| `cpf` | `String` | **Obrigatório**. Campo único |
-| `email` | `String` | **Obrigatório**. Campo único |
-| `dataNascimento` | `String` | **Obrigatório**.|
+| `cpf` | `String` | **Obrigatório**. Campo único e não editável.|
+| `email` | `String` | **Obrigatório**. Campo único.|
+| `dataNascimento` | `String` | **Obrigatório**. Não editável.|
 | `telefone` | `String` | **Obrigatório**.|
 | `rendaMensal` | `Double` | **Obrigatório**. |
+| `ativo` | `Boolean` | **Opcional**. Default = true |
 | `Agencia` | `Integer` | A agencia é enviada automaticamente e tem o valor Default de 1 |
 | `conta` | Relacionamento com tabela conta | **Obrigatório**. A conta é criada somente quando o cliente for cadastrado. Não podendo ser cadastada separadamente.| 
 | `numero` | `Long` | O numero é enviado automaticamente e randomicamente. Possui 4 dígitos. Este campo não pode ser editado|
@@ -73,7 +74,7 @@ Passar parâmetros no body da requisição em formato JSON:
   GET/SEU-SERVER/cliente
 ```
 
-#### Retorna um cliente
+#### Retorna um cliente pelo seu id
 
 ```http
   GET/SEU-SERVER/cliente/{id}
@@ -83,7 +84,7 @@ Passar parâmetros no body da requisição em formato JSON:
 | `id`       | **Obrigatório** passar como parâmetro na URL da requisição. O ID do cliente que você quer detalhar.|
 
 
-#### Editar um cliente (update)
+#### Editar um cliente (update) pelo seu Id
 
 ```http
   PUT/SEU-SERVER/cliente/{id}
@@ -94,12 +95,9 @@ Passar parâmetros no body da requisição em formato JSON:
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
 | `nome` | `String` | **Opcional** |
-| `cpf` | `String` | **Opcional**. Campo único |
 | `email` | `String` | **Opcional**. Campo único |
-| `dataNascimento` | `String` | **Opcional**.|
 | `telefone` | `String` | **Opcional**.|
-| `rendaMensal` | `Double` | **Opcional**. |
-| `rendaMensal` | `Double` | **Opcional**. |
+| `rendaMensal` | `Double` | **Opcional**.|
 | `conta` | Relacionamento com tabela conta | **Opcional**. |
 | `saldo` | `Double` | **Opcional**|
 | `endereco` | Relacionamento com tabela endereco | **Opcional**.| 
@@ -111,7 +109,7 @@ Passar parâmetros no body da requisição em formato JSON:
 | `pais` | `String` | **Opcional**.|
 
 
-#### Soft delete de um cliente 
+#### Soft delete de um cliente - Inativar
 ```http
   PUT/SEU-SERVER/cliente/inativar/{id}
 ```
@@ -136,7 +134,7 @@ Passar parâmetros no body da requisição em formato JSON:
 ```
 | Parâmetro   | Descrição                                   |
 | :---------- | :------------------------------------------ |
-| `id`       | **Obrigatório** passar como parâmetro na URL da requisição. O ID do cliente que você quer detalhar.|
+| `id`       | **Obrigatório** passar como parâmetro na URL da requisição. O ID da conta que você quer detalhar.|
 
 
 ## Rotas de endereço
@@ -163,7 +161,7 @@ Passar parâmetros no body da requisição em formato JSON:
 ```
 | Parâmetro   | Descrição                                   |
 | :---------- | :------------------------------------------ |
-| `id`       | **Obrigatório** passar como parâmetro na URL da requisição. O ID do cliente que você quer inativar.|
+| `id`       | **Obrigatório** passar como parâmetro na URL da requisição. O ID do endereço que você quer editar.|
 
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
