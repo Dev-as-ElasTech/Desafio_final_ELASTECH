@@ -31,6 +31,7 @@ public class ClienteController {
         return ResponseEntity.ok(clienteService.listarTodosAtivos());
     }
 
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> listarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(clienteService.listarClientePorId(id));
