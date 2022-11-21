@@ -1,5 +1,7 @@
 package br.com.divasbank.exceptionhandler;
 
+import org.hibernate.PropertyValueException;
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,10 +25,20 @@ public class ClientControllerAdvice {
                 return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity<MessageExceptionHandler> DataIntegrityViolationException(DataIntegrityViolationException dataViolation) {
+    @ResponseBody
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<MessageExceptionHandler> ConstraintViolationException (ConstraintViolationException dataViolation) {
         MessageExceptionHandler error = new MessageExceptionHandler(
                 new Date(), HttpStatus.BAD_REQUEST.value(), "E-mail ou CPF já cadastrados!"
+        );
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    @ResponseBody
+    @ExceptionHandler(PropertyValueException.class)
+    public ResponseEntity<MessageExceptionHandler> PropertyValueException (PropertyValueException dataViolation) {
+        MessageExceptionHandler error = new MessageExceptionHandler(
+                new Date(), HttpStatus.BAD_REQUEST.value(), "Insira todos os campos obrigatórios para cadastro"
         );
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }

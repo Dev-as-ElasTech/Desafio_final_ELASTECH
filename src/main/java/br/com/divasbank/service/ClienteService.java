@@ -40,7 +40,7 @@ public class ClienteService {
         return cliente.orElseThrow( () -> new ClientNotFoundException());
     }
 
-    public Cliente cadastrar(Cliente cliente) {
+    public Cliente cadastrar(Cliente cliente) throws Exception {
         Conta contaNova = contaRepository.save(cliente.getConta());
         cliente.setConta(contaNova);
         Endereco endereco = enderecoRepository.save(cliente.getEndereco());
