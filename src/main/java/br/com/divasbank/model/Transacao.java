@@ -1,6 +1,8 @@
 package br.com.divasbank.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -32,7 +34,9 @@ public class Transacao {
 
     @Column(updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date data = new java.sql.Date(System.currentTimeMillis());
+    @CreationTimestamp
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss", timezone = "America/Sao_Paulo")
+    private Date data;
 
     public Transacao() {
     }
