@@ -56,11 +56,11 @@ public class TransacaoService {
             throw new Exception("A transferênia não pode ser efetuada: Conta de destino está inativa.");
         }
 
-        if(transacao.getValor() <= 1){
+        if(transacao.getValor() <= 0){
             throw new Exception("A transferênia não pode ser efetuada: Informe um valor maior que zero.");
         }
 
-        if(contaOrigem.getSaldo() <= transacao.getValor()){
+        if(contaOrigem.getSaldo() < transacao.getValor()){
             throw new Exception("A transferênia não pode ser efetuada: Conta de origem não tem saldo sufuciente.");
         }
     }

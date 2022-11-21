@@ -8,7 +8,6 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@DynamicUpdate
 public class Transacao {
 
     @Id
