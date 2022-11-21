@@ -1,24 +1,38 @@
 package br.com.divasbank.model;
 
 
+import com.sun.istack.NotNull;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@DynamicUpdate
 public class Endereco {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idEndereco;
+    @NotNull
+    @Column(nullable=false)
     private String rua;
+    @NotNull
+    @Column(length=10, nullable=false)
     private String numero;
+    @NotNull
+    @Column(nullable=false)
     private String bairro;
+    @NotNull
+    @Column(nullable=false)
     private String cidade;
+    @NotNull
+    @Column(length=2, nullable=false)
     private String estado;
+    @NotNull
+    @Column(length=9, nullable=false)
     private String cep;
+    @NotNull
+    @Column(nullable=false)
     private String pais;
 
     public Endereco() {

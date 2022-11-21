@@ -20,12 +20,16 @@ public class EnderecoService {
         return enderecoRepository.findAll();
     }
 
-    public Endereco listarEnderecoPorId(Long id) {
-        Optional<Endereco> endereco= enderecoRepository.findById(id);
-        return endereco.get();
+    public Endereco listarEnderecoPorId(Long id) throws Exception {
+        Optional<Endereco> endereco = enderecoRepository.findById(id);
+        if(endereco.isPresent()){
+            return endereco.get();
+        } else {
+            throw new Exception("Endereço não encontrado,informe um id válido.");
+        }
     }
 
-    public void editar(Long id, Endereco endereco) {
+    public void editar(Long id, Endereco endereco) throws Exception {
         listarEnderecoPorId(id);
         Optional<Endereco> enderecoBd = enderecoRepository.findById(id);
 
