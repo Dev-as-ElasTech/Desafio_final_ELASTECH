@@ -54,8 +54,11 @@ public class ClienteService {
         Optional<Cliente> clienteBd = clienteRepository.findById(id);
 
         if (clienteBd.isPresent()) {
-            clienteBd.get().setNome(cliente.getNome());
-            clienteRepository.save(cliente);
+            Cliente c = clienteBd.get();
+            if (cliente.getNome() != null) {
+                c.setNome(cliente.getNome()); }
+
+            clienteRepository.save(c);
         }
     }
     public void inativar(Cliente cliente) {

@@ -24,8 +24,6 @@ public class Conta {
     @Column(nullable=false)
     private Double saldo = 0d;
 
-    //private Boolean verificaChequeEspecial;
-    //private Double chequeEspecial;
     @NotNull
     private Boolean ativo = true;
 
@@ -33,25 +31,23 @@ public class Conta {
     public Conta() {
     }
 
-    public Conta(Long id, Long numero, Integer digito, Double saldo, Boolean verificaChequeEspecial, Double chequeEspecial, Boolean ativo) {
+    public Conta(Long id, Long numero, Integer digito, Double saldo, Boolean ativo) {
         this.id = id;
         this.numero = numero;
         this.digito = digito;
         this.saldo = saldo;
-//        this.verificaChequeEspecial = verificaChequeEspecial;
-//        this.chequeEspecial = chequeEspecial;
         this.ativo = ativo;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Long getId() {
         return id;
     }
 
-    public Long getNumero(Long numeroContaDestino) {
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getNumero() {
         return numero;
     }
 

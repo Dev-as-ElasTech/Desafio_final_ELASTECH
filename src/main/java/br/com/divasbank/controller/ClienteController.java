@@ -46,7 +46,8 @@ public class ClienteController {
     public ResponseEntity<Cliente> editar(@PathVariable Long id, @RequestBody Cliente cliente){
         cliente.setId(id);
         clienteService.editar(id, cliente );
-        return ResponseEntity.ok(cliente);
+        Optional<Cliente> clienteBd = Optional.ofNullable(clienteService.listarClientePorId(id));
+        return ResponseEntity.ok(clienteBd.get());
     }
 
     @PutMapping("inativar/{id}")
