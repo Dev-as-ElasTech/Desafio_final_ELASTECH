@@ -17,7 +17,8 @@
        * [Rota de Contas](#rota-de-contas)
        * [Rotas de Endereço](#rotas-de-endereço)
        * [Rotas de Transações](#rotas-de-transações)
-   * [Ferramentas e tecnologias](#ferramentas-e-tecnologias)
+   * [Ferramentas e Tecnologias](#ferramentas-e-tecnologias)
+ 
 <!--te-->
  
  # 🧾Sobre
@@ -235,7 +236,7 @@ Passar parâmetros no body da requisição em formato JSON:
 | `data` | `Date` | A data da transação é enviada automaticamente.|
 
 
-# 🛠️Ferramentas e Tecnologias 
+# 🛠Ferramentas e Tecnologias
 
 <table>
 <tr>
@@ -288,7 +289,7 @@ Passar parâmetros no body da requisição em formato JSON:
 </tr>
 </table>
 
-<h3> ❤️ Autores❤️  </h3>
+<h3> ❤️ Desenvolvedoras❤️  </h3>
 
 <div>
 
