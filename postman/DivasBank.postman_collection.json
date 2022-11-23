@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "1ee87d20-9e51-456e-979e-b598a7c16ed8",
+		"name": "DivasBank",
+		"description": "Projeto final do curso #ElasTech, oferecido pela PagBank/PagSeguro.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21559218"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Cadastrar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Mayara Souza\",\r\n    \"cpf\": \"689.887.776-88\",\r\n    \"email\": \"mayara.souza@gmail.com\",\r\n    \"dataNascimento\": \"01/01/2001\",\r\n    \"telefone\": \"+5511988986336\",\r\n    \"rendaMensal\": 7000,\r\n    \"conta\": {\r\n        \"saldo\": 20000\r\n    },\r\n    \"endereco\": {\r\n        \"rua\": \"Rua Padre Antônio\",\r\n        \"numero\": \"99\",\r\n        \"bairro\": \"Campo Belo\",\r\n        \"cidade\": \"Nova York\",\r\n        \"estado\": \"SP\",\r\n        \"cep\": \"68568-54\",\r\n        \"pais\": \"Estados Unidos\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente"
+							]
+						},
+						"description": "Cadastrar um novo cliente no banco. Automaticamente, é criada e vinculada uma conta a esse cliente. Cadastramos também o endereço do cliente."
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todos os clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente"
+							]
+						},
+						"description": "Listar todos os clientes cadastrados no banco, ativos e inativos. São devolvidos dados do cliente, do seu endereço e da sua conta."
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Cliente por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"{id}"
+							]
+						},
+						"description": "Listar um único cliente pelo ID informado. São retornados todos os dados cadastrados do cliente."
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clientes Ativos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente/ativos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"ativos"
+							]
+						},
+						"description": "Listar os clientes ativos no banco."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Letícia Souza\",\r\n    \"cpf\": \"132.554.776-00\",\r\n    \"email\": \"leticia@email.com\",\r\n    \"dataNascimento\": \"01011990\",\r\n    \"telefone\": 20,\r\n    \"rendaMensal\": 2500.00,\r\n    \"conta\": {\r\n        \"saldo\": 1500.50\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"{id}"
+							]
+						},
+						"description": "Atualizar dados cadastrais do cliente. Podemos informar no Body apenas os dados que queremos atualizar, não sendo necessário passar um Json com todos os atributos do Cliente."
+					},
+					"response": []
+				},
+				{
+					"name": "Inativar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente/inativar/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"inativar",
+								"{id}"
+							]
+						},
+						"description": "Para realizar um soft delete do cliente, isto é, inativá-lo, utilizamos esse endpoint. Ao inativar um cliente, a conta vinculada a ele é automaticamente desativada também."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Conta",
+			"item": [
+				{
+					"name": "Listar todas as contas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/conta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conta"
+							]
+						},
+						"description": "Listar todos as contas cadastradas no banco, ativas e inativas."
+					},
+					"response": []
+				},
+				{
+					"name": "Listar conta por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/conta/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conta",
+								"{id}"
+							]
+						},
+						"description": "Listar uma única conta pelo ID informado."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endereço",
+			"item": [
+				{
+					"name": "Listar todos os endereços",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"endereco"
+							]
+						},
+						"description": "Listar todos os endereços cadastrados no banco."
+					},
+					"response": []
+				},
+				{
+					"name": "Listar endereço por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/endereco/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"endereco",
+								"{id}"
+							]
+						},
+						"description": "Listar um único endereço pelo ID informado."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Endereço",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rua\": \"Av. Albuquerque\",\r\n    \"numero\": \"1001\",\r\n    \"bairro\": \"Kansas\",\r\n    \"cidade\": \"Nova York\",\r\n    \"estado\": \"SP\",\r\n    \"cep\": \"68568-54\",\r\n    \"pais\": \"Estados Unidos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/endereco/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"endereco",
+								"{id}"
+							]
+						},
+						"description": "Atualizar dados do endereço. Podemos informar no Body apenas os dados que queremos atualizar, não sendo necessário passar um Json com todos os atributos do Endereço."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transações",
+			"item": [
+				{
+					"name": "Cadastrar Transferência",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": 10,\r\n    \"numeroContaOrigem\": 5954,\r\n    \"numeroContaDestino\": 6933\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/transacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transacao"
+							]
+						},
+						"description": "Cadastrar uma transação no banco, informando o valor da transferência, o número da conta de origem e o número da conta de destino. Ao cadastrar a transação, a transferência é operacionalizada, modificando os saldos das contas de origem e destino e salvando no banco."
+					},
+					"response": []
+				},
+				{
+					"name": "Listar transações",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/transacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transacao"
+							]
+						},
+						"description": "Listar todas as transações cadastradas no banco."
+					},
+					"response": []
+				},
+				{
+					"name": "Listar transações por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/transacao/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transacao",
+								"{id}"
+							]
+						},
+						"description": "Listar uma única transação pelo ID informado."
+					},
+					"response": []
+				},
+				{
+					"name": "Listar transações por ContaOrigem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/transacao/extrato/{numero}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transacao",
+								"extrato",
+								"{numero}"
+							]
+						},
+						"description": "Listar todas as transações que tiveram como conta origem o número informado na URL. Funciona como um extrato dessa conta."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
