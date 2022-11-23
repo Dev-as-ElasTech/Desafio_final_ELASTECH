@@ -1,4 +1,6 @@
-# <img src="https://user-images.githubusercontent.com/109546269/203392670-e81ac46e-c147-459a-b0dd-a118e778da9d.jpg" width="40" height="40">     Desafio final #ElasTech 
+# Desafio final #ElasTech 
+
+<h1 align="center"> <img src="https://user-images.githubusercontent.com/109546269/203450752-f4d42e69-128c-42a3-87e0-6c22bac0fa45.jpg" width=180px></h1>   
 
 
 
@@ -45,7 +47,7 @@
 
 # Estruturação de Dados
 
-<h1 align="center"><img src="https://user-images.githubusercontent.com/109546269/203402084-b687350d-418c-4ee4-ac2e-070c1db0ae80.png"></h1>
+<h1 align="center"><img src="https://user-images.githubusercontent.com/109546269/203451570-2c0e78be-f291-46da-8afc-11f99377b9e2.jpg"></h1>
 
 # Arquitetura da API
  
