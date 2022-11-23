@@ -1,28 +1,43 @@
-# Desafio_final_ELASTECH
+# Desafio final #ElasTech 
 
-<h1>Banco API  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="50" height="50"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" height="40"  /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" width="40" height="40" /> </h1>  
+<h1 align="center"> <img src="https://user-images.githubusercontent.com/109546269/203450752-f4d42e69-128c-42a3-87e0-6c22bac0fa45.jpg" width=180px></h1>   
 
-Banco `Divas Bank` API para Projeto Final `#ElasTech` `@PagBank/PagSeguro`. 
 
-Implementação de CRUD  utilizando banco de dados `MySQL` e linguagem `Java` e demais ferramentas citadas logo abaixo.
 
 <h2>Status do Projeto</h2>
 
-<p align="center"> Banco API 💻 Em construção... </p>
- 
- ## Arquitetura da API
- 
- ![ArqAPI](https://user-images.githubusercontent.com/79167856/202822321-c0bd3a98-ace6-485e-a830-0e95d8e4388a.jpeg)
- 
-<h3>Entregas mínimas</h3>
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+![GitHub Org's stars](https://img.shields.io/github/stars/camilafernanda?style=social)
 
+# Índice
+<!--ts-->
+   * [Sobre](#sobre)
+   * [Requisitos](#requisitos)
+   * [Estruturação de Dados](#estruturação-de-dados)
+   * [Documentação da API](#documentação-da-api)
+       * [Cadastro do cliente](#cadastro-do-cliente)
+       * [Rota de Contas](#rota-de-contas)
+       * [Rotas de Endereço](#rotas-de-endereço)
+       * [Rotas de Transações](#rotas-de-transações)
+   * [Ferramentas e Tecnologias](#ferramentas-e-tecnologias)
+ 
+<!--te-->
+ 
+ # 🧾Sobre
+ 
+ Desenvolvimento de API de simulação de banco, com operações bancárias do dia a dia, obedencendo algumas entregas mínimas como:
+  
+  
 - [x] Cadastro de Clientes<br>
 - [x] Buscar os Clientes Cadastrados<br>
 - [x] Transferências de saldo entre as contas<br>
 - [x] Buscar o histórico de transações entre as contas<br>
 
-## Requisitos
-* Ter instalado na sua máquina: mysql, uma IDE (recomendamos o Intellij) e Java.
+# Requisitos 
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="50" height="50"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" width="40" height="40"/><img src="https://cdn.worldvectorlogo.com/logos/postman.svg" width="40" height="40"/>
+
+* Ter instalado na sua máquina: MySQL, uma IDE (recomendamos o Intellij) e Java.
 * Como rodar a aplicação: Clone este repositório
 * Configure o arquivo application.properties com seu dados pessoais do Banco de dados de MySql: o SQL para popular o banco de dados no MySQL Workbench se encontra na pasta `bancoDeDados` e o arquivo é chamado de `bd_divasbank.sql`.
 * Caso prefira utilizar o banco de dados H2, o projeto já possui esta dependência.
@@ -30,14 +45,21 @@ Implementação de CRUD  utilizando banco de dados `MySQL` e linguagem `Java` e 
 * Execute a aplicação: o servidor entra pela porta 8080.
 
 
+# Estruturação de Dados
 
-## Documentação da API
+<h1 align="center"><img src="https://user-images.githubusercontent.com/109546269/203451570-2c0e78be-f291-46da-8afc-11f99377b9e2.jpg"></h1>
+
+# Arquitetura da API
+ 
+ <h1 align="center"><img src="https://user-images.githubusercontent.com/79167856/202822321-c0bd3a98-ace6-485e-a830-0e95d8e4388a.jpeg"></h1>
+
+# Documentação da API
 
 ## Modelo Postman
 - Caso tenha interesse:
-    - O documento chamado `divasBank_postman_collection.json` que está pasta `postman` disponibiliza os modelos das rotas da API que foram testadas no Postman.
+    - O documento chamado `divasBank_postman_collection.json` que está na pasta `postman` disponibiliza os modelos das rotas da API que foram testadas no Postman.
 
-#### Cadastro do cliente
+## Cadastro do cliente
 ```http
   POST/SEU-SERVER/cliente
 ```
@@ -215,9 +237,8 @@ Passar parâmetros no body da requisição em formato JSON:
 | `tipoTransacao` | `String` | O tipoTransacao é enviado automaticamente e seu valor Default é "transaferencia". Pois no momento é a única transação que o projeto realiza.|
 | `data` | `Date` | A data da transação é enviada automaticamente.|
 
-##  Testes no Postman
 
-## Ferramentas e Tecnologias 
+# 🛠Ferramentas e Tecnologias
 
 <table>
 <tr>
@@ -270,7 +291,7 @@ Passar parâmetros no body da requisição em formato JSON:
 </tr>
 </table>
 
-<h3> :yellow_heart: Autores :green_heart: </h3>
+<h3> ❤️ Desenvolvedoras❤️  </h3>
 
 <div>
 
