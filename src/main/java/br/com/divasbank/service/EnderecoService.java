@@ -1,7 +1,6 @@
 package br.com.divasbank.service;
 
 
-import br.com.divasbank.model.Cliente;
 import br.com.divasbank.model.Endereco;
 import br.com.divasbank.repository.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

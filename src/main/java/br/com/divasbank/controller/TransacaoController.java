@@ -1,7 +1,6 @@
 package br.com.divasbank.controller;
 
 
-import br.com.divasbank.model.Cliente;
 import br.com.divasbank.model.Transacao;
 import br.com.divasbank.service.TransacaoService;
 import org.springframework.beans.factory.annotation.Autowired;

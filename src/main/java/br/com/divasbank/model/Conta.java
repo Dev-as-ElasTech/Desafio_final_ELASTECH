@@ -1,11 +1,8 @@
 package br.com.divasbank.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
-import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 

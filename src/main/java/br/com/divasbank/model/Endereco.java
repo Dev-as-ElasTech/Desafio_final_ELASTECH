@@ -2,7 +2,6 @@ package br.com.divasbank.model;
 
 
 import com.sun.istack.NotNull;
-import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.util.Objects;

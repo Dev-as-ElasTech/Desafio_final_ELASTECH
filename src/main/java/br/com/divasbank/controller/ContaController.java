@@ -1,6 +1,5 @@
 package br.com.divasbank.controller;
 
-import br.com.divasbank.model.Cliente;
 import br.com.divasbank.model.Conta;
 import br.com.divasbank.service.ClienteService;
 import br.com.divasbank.service.ContaService;
@@ -10,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("conta")
