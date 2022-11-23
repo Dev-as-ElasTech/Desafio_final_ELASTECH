@@ -58,6 +58,7 @@
 ## Modelo Postman
 - Caso tenha interesse:
     - O documento chamado `divasBank_postman_collection.json` que está na pasta `postman` disponibiliza os modelos das rotas da API que foram testadas no Postman.
+    - A documentação do Postman também pode ser acessada por meio deste link: https://documenter.getpostman.com/view/21559218/2s8YehTcBN
 
 ## Cadastro do cliente
 ```http
